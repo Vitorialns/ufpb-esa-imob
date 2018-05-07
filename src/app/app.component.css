@@ -1,0 +1,32 @@
+body {
+  background: url('assets/images/background.jpg') fixed;
+  height: 100%;
+
+}
+.sidebar {
+  background-repeat: repeat;
+  padding-left:0;
+  padding-right: 0;
+
+}
+
+.alto {
+  min-height:100% !important;
+  position:relative;
+  padding-bottom: 9999px;
+  margin-bottom: -9999px;
+  overflow: hidden;
+}
+
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #eee;
+  vertical-align: middle !important;
+}
+
+mat-icon {
+  font-size: 15px;
+  margin-bottom: -4px;
+  vertical-align: middle !important;
+}
