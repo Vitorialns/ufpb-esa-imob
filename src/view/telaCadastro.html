@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    
+  </head>
+  <body>
+ 
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<center><h2>Cadastro Cliente</h2></center>
+<!--Inicio Dados Pessoais-->
+<!--Primeira Linha-->
+<form>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+        <h4>Dados Pessoais</h4>    
+        <div class="form-group">
+          <label for="nomeCliente">Nome:</label>
+          <input type="text" class="form-control" name="nomeCliente" placeholder="Nome completo do cliente" required>
+        </div>
+      </div>
+      
+        <div class="col-md-3 col-xs-offset-3"> 
+        <div class="form-group">
+          <label for="unidadeVolume">Tipo de Pessoa:</label>
+          <select class="form-control" data-size="5" data-live-search="true" data-width="100%" name="unidadeVolume" required>
+                <option selected disabled>Escolha uma opção</option>
+                <option> Pessoa Jurídica</option>
+                <option> Pessoa Fisíca </option>
+            </select>
+        </div>
+      </div>
+      
+        <div class="form-group">
+            <div class="col-md-3 col-xs-3">
+          <label for="unidadeVolume">Tipo de Cliente:</label>
+          <select class="form-control" data-size="5" data-live-search="true" data-width="100%" name="unidadeVolume" required>
+                <option selected disabled>Escolha uma opção</option>
+                <option>Locador</option>
+                <option>Locatário</option>
+            </select>
+            </div> 
+      <!--Segunda Linha-->
+      <div class="form-group">
+          <div class="col-md-4 col-md-offset-3">    
+            <label for="numeroCPF">CPF:</label>
+            <input type="text" class="form-control" name="numeroCPF" placeholder="Apenas números" required>
+          </div>
+        </div>
+       
+          <div class="col-md-3 col-xs-offset-3"> 
+          <div class="form-group">
+            <label for="dataNascimento">Data Nascimento:</label>
+            <input type="text" class="form-control" name="dataNascimento" placeholder="dd-mm-aaaa" required>
+          </div>
+        </div>
+        
+          <div class="form-group">
+              <div class="col-md-3 col-xs-3">
+            <label for="tipoProfissao">Profissão:</label>
+            <input type="text" class="form-control" name="tipoProfissao" placeholder=" " required>
+              </div>
+          
+      
+      <!--Terceira Linha-->
+      <div class="form-group">
+          <div class="col-md-4 col-md-offset-3">    
+            <label for="numeroRG">RG:</label>
+            <input type="text" class="form-control" name="numeroRG" placeholder="Apenas números" required>
+          </div>
+        </div>
+       
+          <div class="col-md-1 col-xs-1"> 
+          <div class="form-group">
+            <label for="nomeEXP">Exp:</label>
+            <input type="text" class="form-control" name="nomeEXP" placeholder="" required>
+          </div>
+        </div>
+        
+          <div class="form-group">
+              <div class="col-md-1 col-xs-1">
+            <label for="nomeUF">UF:</label>
+            <input type="text" class="form-control" name="nomeUF" placeholder=" " required>
+              </div>
+<!--Fim Dados Pessoais-->
+
+<!--Inicio Endereco-->
+<!--Quarta Linha-->
+<div class="col-md-6 col-md-offset-3">
+    <h4>Endereço</h4>    
+    <div class="form-group">
+      <label for="nomeEndereço">Endereço:</label>
+      <input type="text" class="form-control" name="nomeEndereço" placeholder="Digite o endereço completo do cliente" required>
+    </div>
+  </div>
+<!--Quinta Linha-->
+    <div class="col-md-3 col-xs-offset-3"> 
+    <div class="form-group">
+      <label for="nomeBairro">Bairro:</label>
+      <input type="text" class="form-control" name="nomeBairro" placeholder="Digite o bairro do cliente" required>
+    </div>
+  </div>
+  
+    <div class="form-group">
+        <div class="col-md-3 col-xs-3">
+      <label for="numEndereco">Número:</label>
+      <input type="text" class="form-control" name="numEndereco" placeholder="Digite o número da residência " required>
+        </div>
+<!--Sexta Linha-->
+    <div class="col-md-4 col-xs-offset-3"> 
+    <div class="form-group">
+      <label for="nomeCidade">Cidade:</label>
+      <input type="text" class="form-control" name="nomeCidade" placeholder="Digite o nome da cidade natal do cliente" required>
+    </div>
+  </div>
+  
+    <div class="form-group">
+        <div class="col-md-2 col-xs-2">
+      <label for="numeroCEP">CEP:</label>
+      <input type="text" class="form-control" name="numeroCEP" placeholder="Apenas números" required>
+        </select>
+        </div>    
+      
+<!--Fim Endereco-->
+
+<!--Inicio Contato-->
+<div class="col-md-6 col-md-offset-3">
+    <h4>Contato</h4>    
+    <div class="form-group">
+      <label for="enderecoEMAIL">Email:</label>
+      <input type="text" class="form-control" name="enderecoEMAIL" placeholder="Email do cliente" required>
+    </div>
+  </div>
+  
+    <div class="col-md-3 col-xs-offset-3"> 
+    <div class="form-group">
+      <label for="numTelefone">Telefone:</label>
+      <input type="text" class="form-control" name="numTelefone" placeholder="(DDD) 9 XXXX-XXXX" required>
+      
+    </div>
+  </div>
+  
+    <div class="form-group">
+        <div class="col-md-3 col-xs-3">
+      <label for="numTeleEmerg">Tipo de Cliente:</label>
+      <input type="text" class="form-control" name="numTeleEmerg" placeholder="(DDD) 9 XXXX-XXXX" required>
+        </div> 
+<!--Fim Contato-->
+
+    </div> 
+<!--Botão-->    
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+        <div class="form-group">
+          <button class="btn btn-secondary btn-block btn-lg" type="submit">Cadastrar</button>
+        </div>
+      </div>
+      </div>
+    
+</form>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

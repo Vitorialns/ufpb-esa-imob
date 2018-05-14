@@ -1,0 +1,166 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div class="col-lg-12 ">
+                <h1 class="page-header">
+                    Cadastro Clientes
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fas fa-home"></i>
+                        <a routerLink="">Home</a>
+                    </li>
+                    <li class="active">
+                        <i class="far fa-address-card"></i> Cadastro Clientes
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="ol-md-12 text">
+              <form novalidate (ngSubmit)="onSubmit()">
+                  <div class="ol-md-12 text">
+                      <h4>Dados Pessoais</h4>
+                      <div class="form-group">
+                          <label for="nome_liente">Nome:</label>
+                          <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo do cliente" required [(ngModel)]="cliente.nome">
+                      </div>
+                  </div>
+
+                  <div class="ol-md-12 text">
+                      <div class="form-group">
+                          <label for="tipo_pessoa">Tipo de Pessoa:</label>
+                          <select class="form-control" data-size="5" name="tipo_pessoa" data-live-search="true" data-width="100%" [(ngModel)]="selectedtipo">
+                              <option *ngFor="let c of tiposPessoa" ng-value="c">{{c}}</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="ol-md-12 text">
+                          <label for="tipo_cliente">Tipo de Cliente:</label>
+                          <select name="tipo_cliente" class="form-control" data-size="5" data-live-search="true" data-width="100%" [(ngModel)]="selectedcliente">
+                              <option *ngFor="let t of tiposCliente" ng-value="t">{{t}}</option>
+                          </select>
+                      </div>
+                  </div>
+                  <!--Segunda Linha-->
+                  <div class="form-group">
+                      <div class="ol-md-12 text">
+                          <label for="numero_cpf">CPF:</label>
+                          <input type="text" class="form-control" id="cpf"
+                          name="numero_cpf" ng-minlength="14" placeholder="000.000.000-00"
+                       required ngModel >
+                      </div>
+                  </div>
+                  <div class="ol-md-10 text">
+                      <div class="form-group">
+                          <label for="data_nascimento">Data Nascimento:</label>
+                          <input type="text" class="form-control" name="dataNascimento" placeholder="dd-mm-aaaa" required ngModel>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="ol-md-12 text">
+                          <label for="tipoProfissao">Profissão:</label>
+                          <input type="text" class="form-control" name="tipoProfissao" placeholder=" " required ngModel>
+                      </div>
+                  </div>
+                  <!--Terceira Linha-->
+                  <div class="form-group">
+                      <div class="ol-md-12 text">
+                          <label for="numeroRG">RG:</label>
+                          <input type="text" class="form-control" name="numeroRG" placeholder="Apenas números" required ngModel>
+                      </div>
+                  </div>
+                  <div class="ol-md-12 text">
+                      <div class="form-group">
+                          <label for="nomeEXP">Exp:</label>
+                          <input type="text" class="form-control" name="nomeEXP" placeholder="" required ngModel ngModel>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="ol-md-12 text">
+                          <label for="nomeUF">UF:</label>
+                          <input type="text" class="form-control" name="nomeUF" placeholder=" " required ngModel>
+                      </div>
+                  </div>
+                  <!--Fim Dados Pessoais-->
+
+                  <!--Inicio Endereco-->
+                  <!--Quarta Linha-->
+                  <div class="ol-md-12 text">
+                      <h4>Endereço</h4>
+                      <div class="form-group">
+                          <label for="nomeEndereço">Endereço:</label>
+                          <input type="text" class="form-control" name="nomeEndereço" placeholder="Digite o endereço completo do cliente" required
+                              ngModel>
+                      </div>
+                  </div>
+                  <!--Quinta Linha-->
+                  <div class="ol-md-12 text">
+                      <div class="form-group">
+                          <label for="nomeBairro">Bairro:</label>
+                          <input type="text" class="form-control" name="nomeBairro" placeholder="Digite o bairro do cliente" required ngModel>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="ol-md-10 text">
+                          <label for="numEndereco">Número:</label>
+                          <input type="text" class="form-control" name="numEndereco" placeholder="Digite o número da residência " required ngModel>
+                      </div>
+                  </div>
+                  <!--Sexta Linha-->
+                  <div class="ol-md-12 text">
+                      <div class="form-group">
+                          <label for="nomeCidade">Cidade:</label>
+                          <input type="text" class="form-control" name="nomeCidade" placeholder="Digite o nome da cidade natal do cliente" required
+                              ngModel>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="ol-md-10 text">
+                          <label for="numeroCEP">CEP:</label>
+                          <input type="text" class="form-control" name="numeroCEP" placeholder="Apenas números" required ngModel>
+                      </div>
+                  </div>
+
+                  <!--Fim Endereco-->
+
+                  <!--Inicio Contato-->
+                  <div class="ol-md-12 text">
+                      <h4>Contato</h4>
+                      <div class="form-group">
+                          <label for="enderecoEMAIL">Email:</label>
+                          <input type="email" class="form-control" name="enderecoEMAIL" placeholder="Email do cliente" required ngModel>
+                      </div>
+                  </div>
+
+                  <div class="ol-md-12 text">
+                      <div class="form-group">
+                          <label for="numTelefone">Telefone:</label>
+                          <input type="text" class="form-control" name="numTelefone" placeholder="(DDD) 9 XXXX-XXXX" required ngModel>
+
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="ol-md-12 text">
+                          <label for="numTeleEmerg">Telefone de emergência:</label>
+                          <input type="text" class="form-control" name="numTeleEmerg" placeholder="(DDD) 9 XXXX-XXXX" required ngModel>
+                      </div>
+                  </div>
+                  <div>
+                      <div class="col-md-offset-9">
+                          <div class="form-group">
+                              <input class="btn btn-secondary btn-block"
+                              [disabled]="!f.valid" id="creat_cliente_button" type="submit" value="Create Cliente">
+                          </div>
+                      </div>
+                  </div>
+              </form>
+
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,23 @@
+<h1 class="page-header">
+    Cadastro de {{cliente.nome}}
+  </h1>
+<table class="table table-striped">
+    <thead>
+      <tr>
+
+        <th id="nameHeader">Nome</th>
+        <th id="idHeader">Id</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <td>{{cliente.nome}}</td>
+          <td>{{cliente.id}}</td>
+          <td>{{cliente.tipo1}}</td>
+          <th colspan="3"></th>
+          <td><a (click)="destroy(cliente.id)" class="btn btn-danger">excluir</a></td>
+          <td><a (click)="edit(cliente.id)" class="btn btn-secondary">editar</a></td>
+        </tr>
+      </tbody>

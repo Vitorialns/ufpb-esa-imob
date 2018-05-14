@@ -1,0 +1,100 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()">
+      <!--2-->
+      <div>
+        <label for="fname">Nome</label>
+        <input type="text" name="fname" class="form-control" [(ngModel)]="cliente.nome">
+      </div>
+      <!--3-->
+      <div>
+        <label for="fname">Tipo Pessoa</label>
+        <input type="text" name="tipo1" class="form-control" [(ngModel)]="cliente.tipo1">
+      </div>
+      <!--4-->
+      <div>
+        <label for="fname">Tipo Cliente</label>
+        <input type="text" name="tipo2" class="form-control" [(ngModel)]="cliente.tipo2">
+      </div>
+      <!--5-->
+      <div>
+        <label for="fname">Cpf ou Cnpj</label>
+        <input type="text" name="cpfcnpj" class="form-control" [(ngModel)]="cliente.cpfcnpj">
+      </div>
+      <!--6-->
+      <div>
+        <label for="fname">Data de Nascimento</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.datanascimento">
+      </div>
+      <!--7-->
+      <div>
+        <label for="fname">Profissão</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.profissao">
+      </div>
+      <!--8-->
+      <div>
+        <label for="fname">Rg</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.rg">
+      </div>
+      <!--9-->
+      <div>
+        <label for="fname">Orgão exp.</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.orgao">
+      </div>
+      <!--10-->
+      <div>
+        <label for="fname">Estado de Origem</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.ufcliente">
+      </div>
+      <!--11-->
+      <div>
+        <label for="fname">Endereço</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.endereco">
+      </div>
+      <!--12-->
+      <div>
+        <label for="fname">Bairro</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.bairro">
+      </div>
+      <!--13-->
+      <div>
+        <label for="fname">Numero casa</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.numero">
+      </div>
+      <!--14-->
+      <div>
+        <label for="fname">Cidade</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.cidade">
+      </div>
+      <!--15-->
+      <div>
+        <label for="fname">Cep</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.cep">
+      </div>
+      <!--16-->
+      <div>
+        <label for="fname">Email</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.email">
+      </div>
+      <!--17-->
+      <div>
+        <label for="fname">Telefone1</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.telefone1">
+      </div>
+      <!--18-->
+      <div>
+        <label for="fname">Telefone2</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.telefone2">
+      </div>
+      <!--19-->
+      <div>
+        <label for="fname">Telefone3</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.telefone3">
+      </div>
+      <!--20-->
+      <div>
+        <label for="fname">Ufrg</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.ufrg">
+      </div>
+        <input type="submit" value="save" class="btn btn-success">
+    </form>
+  </div>

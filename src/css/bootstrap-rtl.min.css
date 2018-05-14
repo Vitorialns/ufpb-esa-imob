@@ -1,0 +1,162 @@
+<div class="container">
+    <div id="top" class="row">
+    <div class="col-md-6 col-md-offset-3">
+         <center><h1> Imóveis</h1></center>
+    </div>
+ 
+    <div class="col-md-6 col-md-offset-3">
+        <div class="input-group h2">
+            <input name="data[search]" class="form-control" id="search" type="text" placeholder="Buscar Imóvel">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
+    
+    
+
+
+    
+    
+    <div class="table-responsive">
+    <table class="table table-striped">        
+        <thead>        
+            <tr>
+                <th>#</th>
+                <th>Proprietário</th>
+                <th>Endereço</th>
+                <th>Tipo do Imóvel</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="clickable" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                <td>1</td>
+                <td>maria a</td>
+                <td>rio tinto</td>
+                <td>casa</td>
+                <td>Ocupada</td>
+                <td><button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-chevron-down"</span></button></td>
+            </tr>
+        </tbody>
+        <tbody id="collapse1" class="collapse">
+            <tr>
+                <td colspan="4">Proprietário: Maria Amália<br>Endereço: rio tinto <br>Tipo do Imóvel: casa<br> Status: <br>
+                   </td>
+                <td>
+                    <div class="btn-toolbar">
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-edit"</span></button>
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-remove"</span></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        
+
+        <tr class="clickable" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                <td>2</td>
+                <td>maria a</td>
+                <td>rio tinto</td>
+                <td>casa</td>
+                <td>Ocupada</td>
+                <td><button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-chevron-down"</span></button></td>
+            </tr>
+        </tbody>
+        <tbody id="collapse1" class="collapse">
+            <tr>
+                <td colspan="4">Proprietário: Maria jose<br>Endereço: rio tinto <br>Tipo do Imóvel: casa<br> Status:  <br>
+                   </td>
+                <td>
+                    <div class="btn-toolbar">
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-edit"</span></button>
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-remove"</span></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+        </tbody>
+        
+
+        <tr class="clickable" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                <td>3</td>
+                <td>maria a</td>
+                <td>rio tinto</td>
+                <td>casa</td>
+                <td>Ocupada</td>
+                <td><button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-chevron-down"</span></button></td>
+            </tr>
+        </tbody>
+        <tbody id="collapse1" class="collapse">
+            <tr>
+                <td colspan="4">Proprietário: Maria sds<br>Endereço: rio tinto <br>Tipo do Imóvel: casa<br> Status: <br>
+                   </td>
+                <td>
+                    <div class="btn-toolbar">
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-edit"</span></button>
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-remove"</span></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+        </tbody>
+        
+
+        <tr class="clickable" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                <td>4</td>
+                <td>maria a</td>
+                <td>rio tinto</td>
+                <td>casa</td>
+                <td>Ocupada</td>
+                <td><button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-chevron-down"</span></button></td>
+            </tr>
+        </tbody>
+        <tbody id="collapse1" class="collapse">
+            <tr>
+                <td colspan="4">Proprietário: Maria kk<br>Endereço: rio tinto <br>Tipo do Imóvel: casa<br> Status: <br>
+                   </td>
+                <td>
+                    <div class="btn-toolbar">
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-edit"</span></button>
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-remove"</span></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+        
+</tbody>
+        
+
+        <tr class="clickable" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                <td>5</td>
+                <td>maria a</td>
+                <td>rio tinto</td>
+                <td>casa</td>
+                <td>Ocupada</td>
+                <td><button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-chevron-down"</span></button></td>
+            </tr>
+        </tbody>
+        <tbody id="collapse1" class="collapse">
+            <tr>
+                <td colspan="4">Proprietário: Maria se<br>Endereço: rio tinto <br>Tipo do Imóvel: casa<br> Status: <br>
+                   </td>
+                <td>
+                    <div class="btn-toolbar">
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-edit"</span></button>
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-remove"</span></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+        
+
+        
+
+            </table>
+</div>

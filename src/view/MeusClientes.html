@@ -1,0 +1,184 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Meus clientes</title>
+    <meta name="description" content="curso de bootstrap 3">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+    <center><h1>Meus clientes</h1></center>
+</div>
+
+ <div class="container">
+    <div id="top" class="row">
+    <div class="col-md-6 col-md-offset-3">
+         
+    </div>
+ 
+    <div class="col-md-6 col-md-offset-3">
+        <div class="input-group h2">
+            <input name="data[search]" class="form-control" id="search" type="text" placeholder="Buscar Cliente">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+</div>  
+    
+    <div class="table-responsive">
+    <table class="table table-striped">        
+        <thead>        
+            <tr>
+                <th>▀</th>
+                <th>Nome</th>
+                <th>Tipo Pessoa</th>
+                <th>Tipo Cliente</th>
+                <th>CPF/CNPJ</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr class="clickable" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                <td>1</td>
+                <td>maria a</td>
+                <td>pessoafisica</td>
+                <td>Locatário</td>
+                <td width="40">11111111111<a class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a></td>
+            </tr>
+        </tbody>
+        
+        <tbody id="collapse1" class="collapse">
+            <tr>
+                <td colspan="4">Nome: Maria Amália<br>CPF: 11111111111<br>RG: 1111111<br>Órgão expedidor: aaa<br>
+                    Endereço: aaaaaaaaa<br>CEP: 11111111 <br> Tipo Cliente: Locatário</td>
+                <td>
+                    <div class="btn-toolbar">
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-edit"</span></button>
+                        <button class="btn btn-danger" type="button"><span class="glyphicon glyphicon-remove"</span></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        
+        <tbody>
+            <tr class="clickable" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                <td>2</td>
+                <td>maria b</td>
+                <td>pessoafisica</td>
+                <td>Locador</td>
+                <td>22222222222<a class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a></td>
+            </tr>
+        </tbody>
+        <tbody id="collapse2" class="collapse">
+            <tr>
+                <td colspan="4">Nome: Maria Bruna<br>CPF: 22222222222<br>RG: 2222222<br>Órgão expedidor: bbb<br>
+                    Endereço: bbbbbbbbb<br>CEP: 22222222<br>Tipo Cliente: Locador</td>
+                <td>
+                    <div class="btn-toolbar">
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-edit"</span></button>
+                        <button class="btn btn-danger" type="button"><span class="glyphicon glyphicon-remove"</span></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        
+        <tbody>
+            <tr class="clickable" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                <td>3</td>
+                <td>maria c</td>
+                <td>pessoafisica</td>
+                <td>Locador</td>
+                <td>33333333333<a class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a></td>
+            </tr>
+        </tbody>
+        <tbody id="collapse3" class="collapse">
+            <tr>
+                <td colspan="4">Nome: Maria Clara<br>CPF: 33333333333<br>RG: 3333333<br>Órgão expedidor: ccc<br>
+                    Endereço: ccccccccc<br>CEP: 33333333 <br>Tipo Cliente: Locador</td>
+                <td>
+                    <div class="btn-toolbar">
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-edit"</span></button>
+                        <button class="btn btn-danger" type="button"><span class="glyphicon glyphicon-remove"</span></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+        <tbody>
+            <tr class="clickable" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                <td>4</td>
+                <td>maria d</td>
+                <td>pessoafisica</td>
+                <td>Locador</td>
+                <td>44444444444<a class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a></td>
+            </tr>
+        </tbody>
+        <tbody id="collapse4" class="collapse">
+            <tr>
+                <td colspan="4">Nome: Maria Daniela<br>CPF: 44444444444<br>RG: 4444444<br>Órgão expedidor: ddd<br>
+                    Endereço: ddddddddd<br>CEP: 44444444 <br>Tipo Cliente: Locador</td>
+                <td>
+                    <div class="btn-toolbar">
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-edit"</span></button>
+                        <button class="btn btn-danger" type="button"><span class="glyphicon glyphicon-remove"</span></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+        <tbody>
+            <tr class="clickable" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                <td>5</td>
+                <td>maria e</td>
+                <td>pessoafisica</td>
+                <td>Locador</td>
+                <td>55555555555<a class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a></td>
+            </tr>
+        </tbody>
+        <tbody id="collapse5" class="collapse">
+            <tr>
+                <td colspan="4">Nome: Maria Elisa<br>CPF: 55555555555<br>RG: 5555555<br>Órgão expedidor: eee<br>
+                    Endereço: eeeeeeeee<br>CEP: 55555555 <br> Tipo Cliente: Locador</td>
+                <td>
+                    <div class="btn-toolbar">
+                        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-edit"</span></button>
+                        <button class="btn btn-danger" type="button"><span class="glyphicon glyphicon-remove"</span></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="dropdown active">
+    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true" type="button">Filtros<span class="caret"></span></button>
+    <ul role="menu" class="dropdown-menu">
+        <li role="presentation"><a href="#">Nome</a></li>
+        <li role="presentation"><a href="#">CPF/CNPJ</a></li>
+        <li role="presentation"><a href="#">Tipo Pessoa</a></li>
+        <li role="presentation"><a href="#">Tipo Cliente</a></li>       
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+                
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>
