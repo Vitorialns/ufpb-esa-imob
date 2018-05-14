@@ -1,0 +1,242 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Parcelas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <style>
+    button .material-icons{
+      vertical-align: middle;
+    }
+    .table {
+      margin-bottom: 0px;
+    }
+
+    table.table-bordered{
+      border: 2px solid black;
+      border-bottom: 0px;
+
+  }
+  table.table-bordered > thead > tr > th{
+      border:2px solid black;
+      border-bottom: 0px;
+  }
+  table.table-bordered > tbody > tr > td{
+      border: 2px solid black;
+      border-bottom: 0px;
+
+  }
+    </style>
+
+</head>
+<body>
+<br/><b>
+  <div class="container text-center">
+    <table class="table table-bordered">
+      <thead class="text-center">
+        <tr>
+          <th scope="col"><h4><b>RECIBO DE ALUGUEL</b></h4></th>
+          <th scope="col"><h5><b>EDIFÍCIO {{ parcela.edificio }}</b></h5></th>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td  >
+            <div class="text-left">Nome:<div>
+            <div class="text-right">{{parcela.locatario}}<div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </table>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td  >
+          <div class="text-left">Endereço:<div>
+          <div class="text-right">{{parcela.endereco}}<div>
+        </td>
+        <td>
+          <div class="text-left">Apto:<div>
+          <div class="text-right">{{parcela.apto}}<div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td>
+          <div class="text-left">Aluguel:<div>
+          <div class="text-right">{{parcela.alguel}}<div>
+        </td>
+        <td>
+          <div class="text-left">Condominio:<div>
+          <div class="text-right">{{parcela.condominio}}<div>
+        </td>
+        <td  >
+            <div class="text-left">Total:<div>
+            <div class="text-right">{{aluguel+condominio}}<div>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td  >
+          <div class="text-left">Juros:<div>
+          <div class="text-right">R$ (pg-vc)*0.33/100 </div>
+        </td>
+        <td>
+          <div class="text-left">Vencimento:<div>
+          <div class="text-right">{{parcela.venc}}<div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td  >
+          <div class="text-left">Multa (2% após venc.):<div>
+          <div class="text-right">{{total*2/100}}<div>
+        </td>
+        <td>
+          <div class="text-left">Valor a pagar:<div>
+          <div class="text-right">{{parcela.pagar}}<div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered">
+    <tbody>
+      <tr class="text-center" style="border-bottom: 2px solid black">
+        <td><br/>
+          O aluguel deverá ser pago no escritório. <br/>
+          Endereço: Edifício João Alves, <br/>
+           Rua Rui Barbora, nº 618,<br/>
+           sala 104, 1º andar.<br/>
+
+        <td style="vertical-align: bottom">
+          <span class="col-md-12" style="border-top: 2px solid black">&ensp;&ensp;&ensp;ASSINATURA DO CORRETOR &ensp;&ensp;&ensp;</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+<br>
+<div class="row" style="border-bottom:2px solid gray"></div>
+<br>
+<br>
+
+
+<!-- SEGUNDA PARTE DO RECIBO -->
+<table class="table table-bordered">
+  <thead class="text-center">
+    <tr>
+      <th scope="col"><h4><b>RECIBO DE ALUGUEL</b></h4></th>
+      <th scope="col"><h5><b>EDIFÍCIO {{ parcela.edificio }}</b></h5></th>
+    </tr>
+  </thead>
+</table>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td  >
+        <div class="text-left">Nome:<div>
+        <div class="text-right">{{parcela.locatario}}<div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</table>
+<table class="table table-bordered">
+<tbody>
+  <tr>
+    <td  >
+      <div class="text-left">Endereço:<div>
+      <div class="text-right">{{parcela.endereco}}<div>
+    </td>
+    <td>
+      <div class="text-left">Apto:<div>
+      <div class="text-right">{{parcela.apto}}<div>
+    </td>
+  </tr>
+</tbody>
+</table>
+<table class="table table-bordered">
+<tbody>
+  <tr>
+    <td>
+      <div class="text-left">Aluguel:<div>
+      <div class="text-right">{{parcela.alguel}}<div>
+    </td>
+    <td>
+      <div class="text-left">Condominio:<div>
+      <div class="text-right">{{parcela.condominio}}<div>
+    </td>
+    <td  >
+        <div class="text-left">Total:<div>
+        <div class="text-right">{{aluguel+condominio}}<div>
+      </td>
+  </tr>
+</tbody>
+</table>
+<table class="table table-bordered">
+<tbody>
+  <tr>
+    <td  >
+      <div class="text-left">Juros:<div>
+      <div class="text-right">R$ (pg-vc)*0.33/100 </div>
+    </td>
+    <td>
+      <div class="text-left">Vencimento:<div>
+      <div class="text-right">{{parcela.venc}}<div>
+    </td>
+  </tr>
+</tbody>
+</table>
+<table class="table table-bordered">
+<tbody>
+  <tr>
+    <td  >
+      <div class="text-left">Multa (2% após venc.):<div>
+      <div class="text-right">{{total*2/100}}<div>
+    </td>
+    <td>
+      <div class="text-left">Valor a pagar:<div>
+      <div class="text-right">{{parcela.pagar}}<div>
+    </td>
+  </tr>
+</tbody>
+</table>
+<table class="table table-bordered">
+<tbody>
+  <tr class="text-center" style="border-bottom: 2px solid black">
+    <td><br/>
+      O aluguel deverá ser pago no escritório. <br/>
+      Endereço: Edifício João Alves, <br/>
+       Rua Rui Barbora, nº 618,<br/>
+       sala 104, 1º andar.<br/>
+
+    <td style="vertical-align: bottom">
+      <span class="col-md-12" style="border-top: 2px solid black">&ensp;&ensp;&ensp;ASSINATURA DO CORRETOR &ensp;&ensp;&ensp;</span>
+    </td>
+  </tr>
+</tbody>
+</table>
+
+  <br><button class="btn btn-dark btn-table d-print-none"><i class="material-icons">local_printshop</i> Imprimir</button><br><br>
+</div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+</body>
+</html>
