@@ -2,17 +2,17 @@
   <div id="page-wrapper">
 
       <div class="container-fluid">
-
-
+    
+    
         <div class="row">
-          <div class="col-lg-12 ">
+          <div class="col-md-12">
             <h1 class="page-header">
               Cadastro Imóveis
             </h1>
             <ol class="breadcrumb">
               <li>
                 <i class="fas fa-home"></i>
-                <a href="index.html">Home</a>
+                <a routerLink="">Home</a>
               </li>
               <li class="active">
                 <i class="far fa-address-card"></i> Cadastro Imóveis
@@ -20,83 +20,82 @@
             </ol>
           </div>
         </div>
-
-        <form #f="ngForm" novalidate (ngSubmit)="onSubmit(f.value)">
-
-        <div class="row">
-          <div class="col-md-10">
-            <div class="form-group">
-              <label for="proprietario">Proprietário</label>
-              <input type="text" class="form-control" name="proprietario" required placeholder="Nome completo do Proprietário" required ngModel="{{imovel.proprietario}}">
-            </div>
-          </div>
-
-
-          <div class="col-md-10 text">
-            <div class="form-group">
-              <label for="endereco">Endereço</label>
-              <input type="text" class="form-control" name="endereco" required placeholder="Endereço do Imóvel" required ngModel="{{imovel.endereco}}">
-
-            </div>
-          </div>
-
-
-          <div class="col-md-10 text">
-            <div class="form-group">
-              <label for="unidadeVolume">Tipo do Imóvel</label>
-              <select class="form-control" data-size="5" name="tipo_imovel" required  data-live-search="true" data-width="100%" [(ngModel)]="selectedtipo" (ngModelChange)="onChange($event)">
-                <option *ngFor="let t of tiposImovel" ng-value="t">{{t}}</option>
-              </select>
-            </div>
-          </div>
-
-
-          <div class="col-md-10 text">
-            <div class="form-group">
-              <label for="unidadeVolume">Status</label>
-              <select class="form-control" data-size="5" data-live-search="true" required data-width="100%" name="unidadestatus"  [(ngModel)]="selectedstatus" (ngModelChange)="onChange($event)" required>
-                <option *ngFor="let s of status" ng-value="s">{{s}}</option>
-              </select>
-            </div>
-          </div>
-
-
-          <div class="col-md-10 text">
-            <div class="form-group">
-              <label for="unidadeVolume">Número de Quartos</label>
-              <select class="form-control" data-size="5" data-live-search="true" required data-width="100%" name="unidadequarto" required [(ngModel)]="selectednquartos" (ngModelChange)="onChange($event)">
-                <option *ngFor="let q of nums1" ng-value="q">{{q}}</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-md-10 text">
-            <div class="form-group">
-              <label for="unidadeVolume">Vagas de Garagem</label>
-              <select class="form-control" data-size="5" data-live-search="true" required data-width="100%" name="unidadegaragem" required [(ngModel)]="selectedgaragem" (ngModelChange)="onChange($event)">
-                <option *ngFor="let g of nums" ng-value="g">{{g}}</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-md-10 text">
-            <div class="form-group">
-              <label for="observacoes">Observações</label>
+    
+        <form #f="ngForm" aria-required="true" (ngSubmit)="onSubmit(f.value)">
+    
+          <div class="row">
+            <div class="col-md-12">
               <div class="form-group">
-                <textarea class="form-control" rows="6" name="observacoes" required placeholder="Observações do Imóvel" value="Create Imovel" ngModel="{{imovel.observacoes}}"></textarea>
+                <label for="proprietario">Proprietário</label>
+                <input type="text" class="form-control" [(ngModel)]="imovel.proprietario" name="proprietario" placeholder="Nome completo do Proprietário" required ngModel>
+              </div>
+            </div>
+    
+    
+            <div class="col-md-12 text">
+              <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" class="form-control" name="endereco" [(ngModel)]="imovel.endereco" placeholder="Endereço do Imóvel" required ngModel>
+    
+              </div>
+            </div>
+    
+    
+            <div class="col-md-12 text">
+              <div class="form-group">
+                <label for="unidadeVolume">Tipo do Imóvel</label>
+                <select class="form-control" [(ngModel)]="imovel.tipo_imovel" data-size="5" name="tipo_imovel"  data-live-search="true" data-width="100%" required [(ngModel)]="tipo_imovel">
+                  <option *ngFor="let t of tiposImovel" ng-selected="imovel.tipo_imovel" ng-value="t">{{t}}</option>
+                </select>
+              </div>
+            </div>
+    
+    
+            <div class="col-md-12 text">
+              <div class="form-group">
+                <label for="unidadeVolume">Status</label>
+                <select class="form-control" [(ngModel)]="imovel.unidadestatus" data-size="5" data-live-search="true" data-width="100%" name="unidadestatus"  [(ngModel)]="unidadestatus">
+                  <option *ngFor="let s of status" ng-selected="unidadestatus" ng-value="s">{{s}}</option>
+                </select>
+              </div>
+            </div>
+    
+    
+            <div class="col-md-12 text">
+              <div class="form-group">
+                <label for="unidadeVolume">Número de Quartos</label>
+                <select class="form-control" data-size="5" [(ngModel)]="imovel.unidadequarto" data-live-search="true" data-width="100%" name="unidadequarto" required [(ngModel)]="unidadequarto">
+                  <option *ngFor="let q of nums1" ng-selected="unidadequarto" ng-value="q">{{q}}</option>
+                </select>
+              </div>
+            </div>
+    
+            <div class="col-md-12 text">
+              <div class="form-group">
+                <label for="unidadeVolume">Vagas de Garagem</label>
+                <select class="form-control" data-size="5" [(ngModel)]="imovel.unidadegaragem" data-live-search="true" data-width="100%" name="unidadegaragem" required [(ngModel)]="unidadegaragem">
+                  <option *ngFor="let g of nums" ng-selected="unidadegaragem" ng-value="g">{{g}}</option>
+                </select>
+              </div>
+            </div>
+    
+            <div class="col-md-12 text">
+              <div class="form-group">
+                <label for="observacoes">Observações</label>
+                <div class="form-group">
+                  <textarea class="form-control" rows="6" [(ngModel)]="imovel.observacoes" name="observacoes" placeholder="Observações do Imóvel" value="Create Imovel" required ngModel></textarea>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <article class="col-md"></article>
-
-        <div class="col-md ">
-          <input class="btn btn-secondary btn-block" type="submit" [disabled]="!f.valid" id="creat_imovel_button">
-
-
+          <article class="col-md"></article>
+    
+          <div class="col-md-offset-9">
+            <input class="btn btn-secondary btn-block" [disabled]="!f.valid" type="submit" id="creat_imovel_button">
+    
           </div>
-
-
+    
+    
         </form>
-
       </div>
+    

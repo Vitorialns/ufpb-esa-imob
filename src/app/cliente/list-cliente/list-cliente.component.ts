@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../cliente'; //book
+import { Cliente } from '../cliente';
 import { ClienteService } from '../../servico/cliente.service'
 import { Router } from '@angular/router';
 import { CadClienteComponent } from '../cad-cliente/cad-cliente.component'
@@ -28,7 +28,7 @@ export class ListClienteComponent implements OnInit {
 
     show(cliente) {
       this.clienteService.setter(cliente);
-      this.router.navigate(['/user',cliente.id]);
+      this.router.navigate(['/clientes/',cliente.id]);
     }
 
     destroy(cliente) {
@@ -38,15 +38,6 @@ export class ListClienteComponent implements OnInit {
         console.log(error);
       })
     }
-    /*
-    destroy(id) {
-      if(confirm('Certeza?')) {
-        this.service.delete(+id);
-      }
-      return false;
-    }*/
-
-
-  
+    
 
 }

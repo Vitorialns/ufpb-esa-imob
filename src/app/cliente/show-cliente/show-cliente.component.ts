@@ -17,26 +17,24 @@ export class ShowClienteComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private clienteService: ClienteService
   ) { }
   ngOnInit() {
     this.cliente=this.clienteService.getter();
-  }
-/*
-  get clientes(): Cliente[] {
-    return this.Service.getAll();
-  }*/
-
-  /*
-  loadCliente(id: number): Promise<Cliente> {
-    return new Promise((resolve) => resolve(this.Service.getById(id)));
+    this.clienteService.getClientes().subscribe((todosClientes) => {
+      console.log(todosClientes);
+      this.todosClientes=todosClientes;
+    },(error) => {
+      console.log(error);
+    })
+  
   }
 
   back() {
     this.router.navigate(['/clientes']);
     return false;
   }
+  /*
 
   edit() {
     this.router.navigate(['/clientes', this.cliente.id, 'edit']);
@@ -46,9 +44,19 @@ export class ShowClienteComponent implements OnInit {
   destroy(cliente) {
       this.clienteService.deleteCliente(cliente.id).subscribe((data) => {
         this.todosClientes.splice(this.todosClientes.indexOf(cliente),1)
+        this.router.navigate(['/clientes']);
       }, (error) => {
         console.log(error);
       })
     }
+    edit(cliente){
+      this.clienteService.setter(cliente);
+      this.router.navigate(['clientes/:id/edit']);
+    }
+    newuser(){
+      let cliente = new Cliente();
+      this.clienteService.setter(cliente);
+      this.router.navigate(['clientes/new']);
+    } 
 
 }

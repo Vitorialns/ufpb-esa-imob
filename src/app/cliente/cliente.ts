@@ -4,7 +4,7 @@ export class Cliente {
   cep: string;//
   cidade: string;//
   cpfcnpj: string;//
-  emaail: string;//
+  email: string;//
   endereco: string;//
   nome: string;//
   numero: string;//

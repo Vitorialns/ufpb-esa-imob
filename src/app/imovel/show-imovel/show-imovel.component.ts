@@ -1,7 +1,7 @@
 import { Component, OnInit, ValueProvider, Input } from '@angular/core';
 import { NgForm, FormGroup, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { ImovelService } from '../imovel.service'
+import { ImovelService } from '../../servico/imovel.service'
 import { Imovel } from '../imovel'
 
 @Component({
@@ -10,40 +10,46 @@ import { Imovel } from '../imovel'
   styleUrls: ['./show-imovel.component.css']
 })
 export class ShowImovelComponent implements OnInit {
-  public imovel: Imovel;
-  constructor(private router: Router,
-    private route: ActivatedRoute,
+  private imovel: Imovel;
+  private todosImoveis:Imovel[];
+
+  constructor(
+    private router: Router,
     private imovelService: ImovelService
   ) { }
 
   ngOnInit() {
-    this.route.params
-    .switchMap((params: Params) => this.loadImovel(+params['id']))
-    .subscribe((imovel: Imovel) => this.imovel = imovel)
-    }
-    get imoveis(): Imovel[] {
-      return this.imovelService.getAll();
+    this.imovel=this.imovelService.getter();
+    this.imovelService.getImoveis().subscribe((todosImoveis) => {
+      console.log(todosImoveis);
+      this.todosImoveis=todosImoveis;
+    },(error) => {
+      console.log(error);
+    })
     }
 
-    loadImovel(id: number): Promise<Imovel> {
-      return new Promise((resolve) => resolve(this.imovelService.getById(id)));
-    }
 
     back() {
       this.router.navigate(['/imoveis']);
       return false;
     }
 
-    edit() {
-      this.router.navigate(['/imoveis', this.imovel.id, 'edit']);
-      return false;
+    edit(imovel) {
+      this.imovelService.setter(imovel);
+      this.router.navigate(['imoveis/:id/edit']);
     }
+    newuser(){
+      let imovel = new Imovel();
+      this.imovelService.setter(imovel);
+      this.router.navigate(['imoveis/new']);
+    } 
     
-    destroy(id) {
-      if(confirm('Certeza?')) {
-        this.imovelService.delete(+id);
-      }
+    destroy(imovel) {
+      this.imovelService.deleteImovel(imovel.id).subscribe((data) => {
+      this.todosImoveis.splice(this.todosImoveis.indexOf(imovel),1)
       this.router.navigate(['/imoveis']);
-      return false;
-    }
+      }, (error) => {
+        console.log(error);
+      })
+      }
   }

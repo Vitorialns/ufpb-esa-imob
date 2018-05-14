@@ -4,14 +4,12 @@ import { Observable } from 'rxjs/Rx'
 
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
-//import { Observable } from 'rxjs/Observable';
 import {Cliente} from '../cliente/cliente'
 
-
 @Injectable()
+
 export class ClienteService {
 
-  
   private baseUrl:string='http://localhost:8080';
   private headers = new Headers({'Content-Type':'application/json'});
   private options = new RequestOptions({headers:this.headers})
@@ -32,21 +30,18 @@ export class ClienteService {
     .catch(this.errorHandler);
   }
   deleteCliente(id:Number) {
-
     return this.http.delete(this.baseUrl+'/user/'+id,this.options)
     .map((response:Response) => response.json())
     .catch(this.errorHandler);
 
   }
   createCliente(cliente:Cliente) {
-
     return this.http.post(this.baseUrl+'/user',JSON.stringify(cliente),this.options)
     .map((response:Response) => response.json())
     ;
 
   }
   updateCliente(cliente:Cliente) {
-
     return this.http.put(this.baseUrl+'/user',JSON.stringify(cliente),this.options)
     .map((response:Response) => response.json())
     .catch(this.errorHandler);

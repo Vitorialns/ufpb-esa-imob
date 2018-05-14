@@ -5,6 +5,7 @@
 <table class="table table-striped">
     <thead>
       <tr>
+        <th id="nameHeader">id</th>
         <th id="nameHeader">Proprietario</th>
         <th id="endHeader">endereço</th>
         <th id="endHeader">Tipo</th>
@@ -18,15 +19,14 @@
 
     <tbody>
         <tr>
-          <td>{{imovel.proprietario}}</td>
+          <td>{{imovel.id}}</td>
           <td>{{imovel.endereco}}</td>
           <td>{{imovel.tipo_imovel}}</td>
-          <td>{{imovel.unidadestatus}}</td>
           <td>{{imovel.unidadegaragem}}</td>
           <td>{{imovel.unidadequarto}}</td>
           <td>{{imovel.observacoes}}</td>
           <th colspan="3"></th>
-          <td><a href="#" (click)="destroy(imovel.id)" class="btn btn-danger">excluir</a></td>
-          <td><a href="#" (click)="edit(imovel.id)" class="btn btn-secondary">editar</a></td>
+          <td><a (click)="destroy(imovel)" class="btn btn-danger">excluir</a></td>
+          <td><a (click)="edit(imovel)" class="btn btn-secondary">editar</a></td>
         </tr>
       </tbody>

@@ -44,7 +44,7 @@
         <div class="col-md-12 text">
           <div class="form-group">
             <label for="unidadeVolume">Tipo do Imóvel</label>
-            <select class="form-control" data-size="5" name="tipo_imovel"  data-live-search="true" data-width="100%" required [(ngModel)]="selectedtipo" (ngModelChange)="onChange($event)">
+            <select class="form-control" data-size="5" name="tipo_imovel"  data-live-search="true" data-width="100%" required [(ngModel)]="tipo_imovel">
               <option *ngFor="let t of tiposImovel" ng-value="t">{{t}}</option>
             </select>
           </div>
@@ -54,7 +54,7 @@
         <div class="col-md-12 text">
           <div class="form-group">
             <label for="unidadeVolume">Status</label>
-            <select class="form-control" data-size="5" data-live-search="true" data-width="100%" name="unidadestatus"  [(ngModel)]="selectedstatus" (ngModelChange)="onChange($event)">
+            <select class="form-control" data-size="5" data-live-search="true" data-width="100%" name="unidadestatus"  [(ngModel)]="unidadestatus">
               <option *ngFor="let s of status" ng-value="s">{{s}}</option>
             </select>
           </div>
@@ -64,7 +64,7 @@
         <div class="col-md-12 text">
           <div class="form-group">
             <label for="unidadeVolume">Número de Quartos</label>
-            <select class="form-control" data-size="5" data-live-search="true" data-width="100%" name="unidadequarto" required [(ngModel)]="selectednquartos" (ngModelChange)="onChange($event)">
+            <select class="form-control" data-size="5" data-live-search="true" data-width="100%" name="unidadequarto" required [(ngModel)]="unidadequarto">
               <option *ngFor="let q of nums1" ng-value="q">{{q}}</option>
             </select>
           </div>
@@ -73,7 +73,7 @@
         <div class="col-md-12 text">
           <div class="form-group">
             <label for="unidadeVolume">Vagas de Garagem</label>
-            <select class="form-control" data-size="5" data-live-search="true" data-width="100%" name="unidadegaragem" required [(ngModel)]="selectedgaragem" (ngModelChange)="onChange($event)">
+            <select class="form-control" data-size="5" data-live-search="true" data-width="100%" name="unidadegaragem" required [(ngModel)]="unidadegaragem">
               <option *ngFor="let g of nums" ng-value="g">{{g}}</option>
             </select>
           </div>

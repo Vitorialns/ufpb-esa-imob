@@ -1,99 +1,105 @@
 <div class="container">
-    <form (ngSubmit)="onSubmit()">
-      <!--2-->
+   
+    <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+      <!--2<td><a (click)="reset(ngForm)" class="btn btn-secondary">limpar campos</a></td>-->
+      
       <div>
         <label for="fname">Nome</label>
-        <input type="text" name="fname" class="form-control" [(ngModel)]="cliente.nome">
+        <input type="text" name="nome" class="form-control" ngModel>
       </div>
       <!--3-->
       <div>
         <label for="fname">Tipo Pessoa</label>
-        <input type="text" name="tipo1" class="form-control" [(ngModel)]="cliente.tipo1">
+        <select class="form-control" [(ngModel)]="tipo1" name="tipo1" required>
+          <option *ngFor="let y of tiposPessoa" [ngValue]="y">{{y}}</option>
+        </select>
       </div>
       <!--4-->
       <div>
         <label for="fname">Tipo Cliente</label>
-        <input type="text" name="tipo2" class="form-control" [(ngModel)]="cliente.tipo2">
+        <select class="form-control" [(ngModel)]="tipo2" name="tipo2" required>
+          <option *ngFor="let x of tiposCliente" [ngValue]="x">{{x}}</option>
+        </select>
       </div>
       <!--5-->
       <div>
         <label for="fname">Cpf ou Cnpj</label>
-        <input type="text" name="cpfcnpj" class="form-control" [(ngModel)]="cliente.cpfcnpj">
+        <input type="text" name="cpfcnpj" class="form-control" ngModel>
       </div>
       <!--6-->
       <div>
         <label for="fname">Data de Nascimento</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.datanascimento">
+        <input type="text" name="datanascimento" class="form-control" ngModel>
       </div>
       <!--7-->
       <div>
         <label for="fname">Profissão</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.profissao">
+        <input type="text" name="profissao" class="form-control" ngModel>
       </div>
       <!--8-->
       <div>
         <label for="fname">Rg</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.rg">
+        <input type="text" name="rg" class="form-control" ngModel>
       </div>
       <!--9-->
       <div>
         <label for="fname">Orgão exp.</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.orgao">
+        <input type="text" name="orgao" class="form-control" ngModel>
       </div>
       <!--10-->
       <div>
         <label for="fname">Estado de Origem</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.ufcliente">
+        <input type="text" name="ufcliente" class="form-control" ngModel>
       </div>
       <!--11-->
       <div>
         <label for="fname">Endereço</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.endereco">
+        <input type="text" name="endereco" class="form-control" ngModel>
       </div>
       <!--12-->
       <div>
         <label for="fname">Bairro</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.bairro">
+        <input type="text" name="bairro" class="form-control" ngModel>
       </div>
       <!--13-->
       <div>
         <label for="fname">Numero casa</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.numero">
+        <input type="text" name="numero" class="form-control" ngModel>
       </div>
       <!--14-->
       <div>
         <label for="fname">Cidade</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.cidade">
+        <input type="text" name="cidade" class="form-control" ngModel>
       </div>
       <!--15-->
       <div>
         <label for="fname">Cep</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.cep">
+        <input type="text" name="cep" class="form-control" ngModel>
       </div>
       <!--16-->
       <div>
         <label for="fname">Email</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.email">
+        <input type="text" name="email" class="form-control" ngModel>
       </div>
       <!--17-->
       <div>
         <label for="fname">Telefone1</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.telefone1">
+        <input type="text" name="telefone1" class="form-control" ngModel>
       </div>
       <!--18-->
       <div>
         <label for="fname">Telefone2</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.telefone2">
+        <input type="text" name="telefone2" class="form-control" ngModel>
       </div>
       <!--19-->
       <div>
         <label for="fname">Telefone3</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.telefone3">
+        <input type="text" name="telefone3" class="form-control" ngModel>
       </div>
       <!--20-->
       <div>
         <label for="fname">Ufrg</label>
-        <input type="text" name="lname" class="form-control" [(ngModel)]="cliente.ufrg">
+        <input type="text" name="ufrg" class="form-control" ngModel>
       </div>
         <input type="submit" value="save" class="btn btn-success">
     </form>

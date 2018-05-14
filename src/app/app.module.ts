@@ -16,7 +16,7 @@ import { CadImovelComponent } from './imovel/cad-imovel/cad-imovel.component';
 import { EditImovelComponent } from './imovel/edit-imovel/edit-imovel.component';
 import { ListImovelComponent } from './imovel/list-imovel/list-imovel.component';
 import { ShowImovelComponent } from './imovel/show-imovel/show-imovel.component';
-import { ImovelService } from './imovel/imovel.service';
+import { ImovelService } from './servico/imovel.service';
 import { MatIconModule} from '@angular/material';
 import { ClienteService } from './servico/cliente.service'
 
