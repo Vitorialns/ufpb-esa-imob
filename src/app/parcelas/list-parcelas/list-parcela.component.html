@@ -1,0 +1,97 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Parcelas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <style>
+      .btn-table {
+        padding:5px;
+        font-size: 8px;
+        margin-top: -8px;
+      vertical-align: middle;
+    }
+    </style>
+
+</head>
+
+<body>
+  <center><h2>Aluguéis</h2></center>
+  <input type="text" class="form-control" placeholder="Pesquisar" [(ngModel)]="searchText">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">CÓDIGO</th>
+        <th scope="col">LOCATÁRIO</th>
+        <th scope="col">IMÓVEL</th>
+        <th scope="col">LOCADOR</th>
+        <th scope="col">VENCIMENTO</th>
+        <th scope="col">VALOR</th>
+        <th scope="col">STATUS</th>
+        <th scope="col" class="text-center">Baixa</th>
+        <th></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let parcela of parcelas | filter : searchText">
+        <th   scope="row">02001012</th>
+        <td>Adyson Lucas B. Queiroga</td>
+        <td>Ed. Brizolinhas / 10</td>
+        <td>João Leuson P. G. Alves</td>
+        <td>25-05-2018</td>
+        <td>2000.00</td>
+        <td> XX dias</td> <!-- mostras quantos dias para o vencimento, caso nao esteja. se vencido mostrar atrasado. se pago pago rs -->
+        <td class="text-center  ">
+          <button class="btn btn-warning btn-table " data-toggle="modal" data-target="#confirmaBaixaPopUp"><i class="material-icons" >done</i></button>
+
+          <div class="modal fade" id="confirmaBaixaPopUp" tabindex="-1" role="dialog" aria-labelledby="confirmaBaixaPopUpTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Confirmar pagamento desta parcela?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Dados da parcela com angular//
+                  LOCATÁRIO
+                  LOCADOR
+                  VALOR
+                  CONDOMINIO
+                  ENDEREÇO
+                  TOTAL
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-info" data-dismiss="modal">Re-imprimir</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-success">Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </td>
+        <td class="text-center">
+          <button class="btn btn-dark btn-table"><i class="material-icons">local_printshop</i></button>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+</body>
+</html>
