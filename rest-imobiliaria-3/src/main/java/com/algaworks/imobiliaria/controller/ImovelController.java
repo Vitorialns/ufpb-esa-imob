@@ -1,6 +1,5 @@
 package com.algaworks.imobiliaria.controller;
 
-
 import java.util.List;
 import java.util.Optional;
 
@@ -14,39 +13,39 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.algaworks.imobiliaria.model.Cliente;
-import com.algaworks.imobiliaria.repository.Clientes;
-
+import com.algaworks.imobiliaria.model.Imovel;
+import com.algaworks.imobiliaria.repository.Imoveis;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-
-public class ClienteController {
-	
+public class ImovelController {
 	@Autowired
-	private Clientes c;
+	private Imoveis m;
 	
-	@GetMapping("/users")
-	public List<Cliente> getClientes() {
-		return c.findAll();
+	@GetMapping("/imoveis")	
+	public List<Imovel> listarImoveis() {
+		return m.findAll();
 	}
-	@GetMapping("/user/{id}")
-	public Optional<Cliente> getCliente(@PathVariable Long id) {
-		return c.findById(id);
-	}
-	@DeleteMapping("/user/{id}")
-	public boolean deleteCliente(@PathVariable Long id) {
-		c.deleteById(id);
+	
+	@DeleteMapping("/imovel/{id}")
+	public boolean deletarImovel(@PathVariable Long id) {
+		m.deleteById(id);
 		return true;
 	}
-	@PostMapping("/user")
-	public Cliente createCliente(@RequestBody Cliente cliente) {
-		return c.save(cliente);
-	}
-	@PutMapping("/user")
-	public Cliente updateCliente(@RequestBody Cliente cliente) {
-		return c.save(cliente);
+	
+	@PostMapping("/imovel")
+	public Imovel createImoveis(@RequestBody Imovel imovel) {
+		return m.save(imovel);
 	}
 	
+	@GetMapping("/imovel/{id}")
+	public Optional<Imovel> getImovel(@PathVariable Long id) {
+		return m.findById(id);
+	}
+	
+	@PutMapping("/imovel")
+	public Imovel updateImovel(@RequestBody Imovel imovel) {
+		return m.save(imovel);
+	}
 
 }

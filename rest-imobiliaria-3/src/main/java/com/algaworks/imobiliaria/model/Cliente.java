@@ -15,50 +15,24 @@ public class Cliente {
 
 	private String bairro;
     
-	public  String cep;
-    public String cidade;
-    public String cpfcnpj;
-    public String email;
-    public String endereco;
-    public String nome;
-    public String numero;
-    public String orgao;
-    public String profissao;
-    public String rg;
-    public String telefone1;
-    public String telefone2;
-    public String telefone3;
-    public String tipo1;
-    public String tipo2;
-    public String ufcliente;
-    public String ufrg;
-    public String datanascimento;
-    
-    public Cliente(Long id, String bairro, String cep, String cidade, String cpfcnpj, String email, String endereco,
-			String nome, String numero, String orgao, String profissao, String rg, String telefone1, String telefone2,
-			String telefone3, String tipo1, String tipo2, String ufcliente, String ufrg, String datanascimento) {
-		super();
-		this.id = id;
-		this.bairro = bairro;
-		this.cep = cep;
-		this.cidade = cidade;
-		this.cpfcnpj = cpfcnpj;
-		this.email = email;
-		this.endereco = endereco;
-		this.nome = nome;
-		this.numero = numero;
-		this.orgao = orgao;
-		this.profissao = profissao;
-		this.rg = rg;
-		this.telefone1 = telefone1;
-		this.telefone2 = telefone2;
-		this.telefone3 = telefone3;
-		this.tipo1 = tipo1;
-		this.tipo2 = tipo2;
-		this.ufcliente = ufcliente;
-		this.ufrg = ufrg;
-		this.datanascimento = datanascimento;
-	}
+	private  String cep;
+	private String cidade;
+	private String cpfcnpj;
+	private String email;
+	private String endereco;
+	private String nome;
+	private String numero;
+	private String orgao;
+	private String profissao;
+	private String rg;
+	private String telefone1;
+	private String telefone2;
+    private String telefone3;
+    private String tipo1;
+    private String tipo2;
+    private String ufcliente;
+    private String ufrg;
+    private String datanascimento;
     
 	public Long getId() {
 		return id;
