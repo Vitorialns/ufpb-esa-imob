@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th id="nameHeader">id</th>
+        <th id="nameHeader">Valor</th>
+        <th id="endHeader">Locador</th>
+
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <td>{{contrato.id}}</td>
+          <td>{{contrato.valoraluguel}}</td>
+          <td>{{contrato.idcliente_locador}}</td>
+          <th colspan="3"></th>
+          <td><a (click)="destroy(contrato)" class="btn btn-danger">excluir</a></td>
+          <td><a class="btn btn-secondary">edit is geting done</a></td>
+        </tr>
+      </tbody>
+<!--(click)="edit(contrato)"-->

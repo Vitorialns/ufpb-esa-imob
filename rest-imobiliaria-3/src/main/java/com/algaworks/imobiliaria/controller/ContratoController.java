@@ -13,40 +13,39 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.algaworks.imobiliaria.model.Imovel;
-import com.algaworks.imobiliaria.repository.Imoveis;
+import com.algaworks.imobiliaria.model.Contrato;
+import com.algaworks.imobiliaria.repository.Contratos;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 
-public class ImovelController {
+public class ContratoController {
 	@Autowired
-	private Imoveis m;
+	private Contratos c;
 	
-	@GetMapping("/imoveis")	
-	public List<Imovel> listarImoveis() {
-		return m.findAll();
+	@GetMapping("/contratos")	
+	public List<Contrato> getContratos() {
+		return c.findAll();
 	}
 	
-	@DeleteMapping("/imovel/{id}")
-	public boolean deletarImovel(@PathVariable Long id) {
-		m.deleteById(id);
+	@DeleteMapping("/contrato/{id}")
+	public boolean deleteContrato(@PathVariable Long id) {
+		c.deleteById(id);
 		return true;
 	}
 	
-	@PostMapping("/imovel")
-	public Imovel createImoveis(@RequestBody Imovel imovel) {
-		return m.save(imovel);
+	@PostMapping("/contrato")
+	public Contrato createImoveis(@RequestBody Contrato contrato) {
+		return c.save(contrato);
 	}
 	
-	@GetMapping("/imovel/{id}")
-	public Optional<Imovel> getImovel(@PathVariable Long id) {
-		return m.findById(id);
+	@GetMapping("/contrato/{id}")
+	public Optional<Contrato> getContrato(@PathVariable Long id) {
+		return c.findById(id);
 	}
 	
-	@PutMapping("/imovel")
-	public Imovel updateImovel(@RequestBody Imovel imovel) {
-		return m.save(imovel);
+	@PutMapping("/contrato")
+	public Contrato updateContrato(@RequestBody Contrato contrato) {
+		return c.save(contrato);
 	}
-
 }

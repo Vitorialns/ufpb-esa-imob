@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.algaworks.imobiliaria.model.Cliente;
 import com.algaworks.imobiliaria.repository.Clientes;
+import com.algaworks.cobranca.repository.filtros.NomeFiltro;
 
 
 @RestController
@@ -46,6 +47,10 @@ public class ClienteController {
 	@PutMapping("/user")
 	public Cliente updateCliente(@RequestBody Cliente cliente) {
 		return c.save(cliente);
+	}
+	public List<Cliente> buscaCliente(NomeFiltro nome) {
+		String nomeCliente = nome.getNome();
+		return c.findByNomeContaining(nomeCliente);
 	}
 	
 

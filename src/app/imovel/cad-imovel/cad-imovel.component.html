@@ -27,7 +27,12 @@
         <div class="col-md-12">
           <div class="form-group">
             <label for="proprietario">Proprietário</label>
-            <input type="text" class="form-control" name="proprietario" placeholder="Nome completo do Proprietário" required ngModel>
+            <input type="text" class="form-control" name="proprietario" placeholder="Busca" required [(ngModel)]="proprietario">
+            <tbody *ngFor="let cliente of todosClientes | filterdata: proprietario  : 'nome' ; let i = index">
+            <div *ngIf="cliente.tipo2== 'Locador' ">
+              <td (click)="escolhaCliente(cliente)">{{cliente.nome}}</td>
+            </div>
+            </tbody>
           </div>
         </div>
 

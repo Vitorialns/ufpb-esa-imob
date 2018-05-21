@@ -10,14 +10,14 @@
       <!--3-->
       <div>
         <label for="fname">Tipo Pessoa</label>
-        <select class="form-control" [(ngModel)]="tipo1" name="tipo1" required>
+        <select class="form-control" [(ngModel)]="tipo1" name="tipo1">
           <option *ngFor="let y of tiposPessoa" [ngValue]="y">{{y}}</option>
         </select>
       </div>
       <!--4-->
       <div>
         <label for="fname">Tipo Cliente</label>
-        <select class="form-control" [(ngModel)]="tipo2" name="tipo2" required>
+        <select class="form-control" [(ngModel)]="tipo2" name="tipo2">
           <option *ngFor="let x of tiposCliente" [ngValue]="x">{{x}}</option>
         </select>
       </div>

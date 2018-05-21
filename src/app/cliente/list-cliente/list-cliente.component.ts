@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../cliente';
 import { ClienteService } from '../../servico/cliente.service'
 import { Router } from '@angular/router';
-import { CadClienteComponent } from '../cad-cliente/cad-cliente.component'
+import { FilterdataPipe } from '../../filterdata.pipe';
+//import { CadClienteComponent } from '../cad-cliente/cad-cliente.component'
 
 
 
@@ -19,7 +20,6 @@ export class ListClienteComponent implements OnInit {
     ) { }
     ngOnInit() {
       this.clienteService.getClientes().subscribe((todosClientes) => {
-        console.log(todosClientes);
         this.todosClientes=todosClientes;
       },(error) => {
         console.log(error);

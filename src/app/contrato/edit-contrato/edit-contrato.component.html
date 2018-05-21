@@ -1,0 +1,42 @@
+<div class="container">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+        <div>
+          <label for="datadenacscimento">Data de vencimento</label>
+          <input type="date" name="datadevencimento" class="form-control" [(ngModel)]="cadastro.datadenacscimento">
+        </div>
+        <div>
+          <label for="fname">Data inicial</label>
+          <input type="date" name="datafinal" class="form-control" [(ngModel)]="cadastro.datafinal">
+        </div>
+        <div>
+            <label for="fname">Data final</label>
+            <input type="date" name="datainicial" class="form-control" [(ngModel)]="cadastro.datainicial">
+        </div>
+        <div>
+            <label for="fname">Valor do aluguel</label>
+            <input type="number" name="valoraluguel" class="form-control" [(ngModel)]="cadastro.valoraluguel">
+        </div>
+        <div>
+            <label for="fname">Valor Total</label>
+            <input type="number" name="valortotal" class="form-control" [(ngModel)]="cadastro.valortotal">
+        </div>
+        <div>
+            <label for="fname">Valor do condominio</label>
+            <input type="number" name="valorcondominio" class="form-control" [(ngModel)]="cadastro.valorcondominio">
+        </div>
+        <div>
+            <label for="fname">Imovel</label>
+            <input type="number" name="idimovel" class="form-control" [(ngModel)]="cadastro.idimovel">
+        </div>
+        <div>
+            <label for="fname">Locador</label>
+            <input type="number" name="idcliente_locador" class="form-control" [(ngModel)]="cadastro.idcliente_locador">
+        </div>
+        <div>
+            <label for="fname">Locatario</label>
+            <input type="number" name="idcliente_locatario" class="form-control" [(ngModel)]="cadastro.idcliente_locatario">
+        </div>
+                
+        <input type="submit" value="save" class="btn btn-success">
+    </form>
+  </div>

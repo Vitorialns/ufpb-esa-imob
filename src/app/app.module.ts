@@ -22,6 +22,12 @@ import { ClienteService } from './servico/cliente.service'
 
 ;
 import { HttpModule } from '@angular/http';
+import { ContratoComponent } from './contrato/cad-contrato/contrato.component';
+import { ListContratoComponent } from './contrato/list-contrato/list-contrato.component';
+import { EditContratoComponent } from './contrato/edit-contrato/edit-contrato.component';
+import { ShowContratoComponent } from './contrato/show-contrato/show-contrato.component';
+import { ContratoService } from './servico/contrato.service';
+import { FilterdataPipe } from './filterdata.pipe';
 
 
 
@@ -37,6 +43,11 @@ import { HttpModule } from '@angular/http';
     EditImovelComponent,
     ListImovelComponent,
     ShowImovelComponent,
+    ContratoComponent,
+    ListContratoComponent,
+    EditContratoComponent,
+    ShowContratoComponent,
+    FilterdataPipe,
 
   ],
 
@@ -53,7 +64,7 @@ import { HttpModule } from '@angular/http';
 
   ],
 
-  providers: [ClienteService, ImovelService],
+  providers: [ClienteService, ImovelService, ContratoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

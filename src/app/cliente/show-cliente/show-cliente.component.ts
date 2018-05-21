@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../cliente'; 
 import { ClienteService } from '../../servico/cliente.service'
-
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import 'rxjs/add/operator/switchMap';
-//import { resolve } from 'path';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-show-cliente',
@@ -34,13 +31,6 @@ export class ShowClienteComponent implements OnInit {
     this.router.navigate(['/clientes']);
     return false;
   }
-  /*
-
-  edit() {
-    this.router.navigate(['/clientes', this.cliente.id, 'edit']);
-    return false;
-  }*/
-
   destroy(cliente) {
       this.clienteService.deleteCliente(cliente.id).subscribe((data) => {
         this.todosClientes.splice(this.todosClientes.indexOf(cliente),1)

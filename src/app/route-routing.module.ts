@@ -9,6 +9,10 @@ import { CadImovelComponent } from './imovel/cad-imovel/cad-imovel.component';
 import { EditImovelComponent } from './imovel/edit-imovel/edit-imovel.component';
 import { ListImovelComponent } from './imovel/list-imovel/list-imovel.component';
 import { ShowImovelComponent } from './imovel/show-imovel/show-imovel.component';
+import { ContratoComponent } from './contrato/cad-contrato/contrato.component';
+import { EditContratoComponent } from './contrato/edit-contrato/edit-contrato.component';
+import { ListContratoComponent } from './contrato/list-contrato/list-contrato.component';
+import { ShowContratoComponent } from './contrato/show-contrato/show-contrato.component';
 
 export const routes: Routes = [
   { path: "clientes", component: ListClienteComponent},
@@ -20,6 +24,12 @@ export const routes: Routes = [
   { path: 'imoveis/new', component: CadImovelComponent },
   { path: 'imoveis/:id', component: ShowImovelComponent },
   { path: 'imoveis/:id/edit', component: EditImovelComponent },
+
+  { path: 'contratos', component: ListContratoComponent },
+  { path: 'contratos/new', component: ContratoComponent },
+  { path: 'contratos/:id', component: ShowContratoComponent },
+  { path: 'contratos/:id/edit', component: EditContratoComponent },
+
   {
     path: '', redirectTo: '', pathMatch: 'full'
   },

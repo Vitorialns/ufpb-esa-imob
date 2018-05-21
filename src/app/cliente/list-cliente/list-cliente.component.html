@@ -24,7 +24,7 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let cliente of todosClientes">
+    <tr *ngFor="let cliente of todosClientes| filterdata: searchText : 'nome' ; let i = index">
       <td>{{cliente.id}}</td>
       <td>{{cliente.nome}}</td>
       <td>{{cliente.telefone1}}</td>
@@ -32,8 +32,6 @@
       <td>
       <th></th>
       <td><a (click)="show(cliente)"><mat-icon>keyboard_arrow_right</mat-icon></a></td>
-      <!--<td><a (click)="edit(cliente)" class="btn btn-secondary">editar</a></td>
-      <td><a (click)="destroy(cliente)" class="btn btn-danger">excluir</a></td>-->
     </tr>
   </tbody>
 

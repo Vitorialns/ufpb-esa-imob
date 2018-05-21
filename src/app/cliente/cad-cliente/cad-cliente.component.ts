@@ -51,22 +51,11 @@ export class CadClienteComponent implements OnInit {
       this.cliente.telefone3=f.telefone3;
       this.cliente.ufrg=f.ufrg;
       this.clienteService.createCliente(this.cliente).subscribe((cliente) => {
-        console.log(cliente);
-        this.router.navigate(['clientes']);
+      this.router.navigate(['clientes']);
       }, (error) => {
         console.log(error);
       });
-    }else{
-      this.clienteService.updateCliente(this.cliente).subscribe((cliente) => {
-        console.log(cliente);
-        this.router.navigate(['clientes']);
-      }, (error) => {
-        console.log(error);
-      });
-    } 
-  }
-  reset(f: any) {
-    this.f.reset();
+    }
   }
   
 }
