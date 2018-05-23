@@ -11,10 +11,22 @@
 </head>
 
 <body>
-<div class="container-fluid col-md-9">
+<div class="container-fluid col-md-9 bg-light">
 <center><h2>Contratos</h2></center>
-
+	<div class=" card card-body">
     <form>
+        <div class="form-group">
+          <label for="unidadeVolume">Imóvel:</label>
+          <select class="form-control" data-size="5" data-live-search="true" data-width="100%" name="unidadeVolume" required>
+                <option selected disabled>Escolha um imóvel</option>
+                <option>Apartamento 785 Villagio de Roma</option>
+                <option>Casa Altiplano</option>
+                <option>Apartamento 200 Almanara</option>
+                <option>Chácara NBS</option>
+                <option>Apartamento 354 Montalcino</option>
+            </select>
+        </div>
+
         <div class="form-group">
           <label for="unidadeVolume">Locador:</label>
           <select class="form-control" data-size="5" data-live-search="true" data-width="100%" name="unidadeVolume" required>
@@ -52,25 +64,34 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4"> 
-                <div class="form-group">
-                    <label for="nomeEXP">Valor do aluguel:</label>
-                    <input type="text" class="form-control" name="nomeEXP" placeholder="R$" required>
+        	<div class="col-md-4">
+                <label for="nomeEXP">Valor do aluguel:</label>
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">R$</span>
                 </div>
-            </div>
-          
-            <div class="col-md-4"> 
-                <div class="form-group">
-                    <label for="nomeEXP">Valor do condomínio:</label>
-                    <input type="text" class="form-control" name="nomeEXP" placeholder="R$" required>
-                </div>
+                <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                </div> 
             </div>
 
-            <div class="col-md-4"> 
-                <div class="form-group">
-                    <label for="nomeEXP">Valor da garagem:</label>
-                    <input type="text" class="form-control" name="nomeEXP" placeholder="R$" required>
+            <div class="col-md-4">
+                <label for="nomeEXP">Valor do condomínio:</label>
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">R$</span>
                 </div>
+                <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                </div> 
+            </div>
+
+            <div class="col-md-4">
+                <label for="nomeEXP">Valor da garagem:</label>
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">R$</span>
+                </div>
+                <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                </div> 
             </div>
         </div>
 
@@ -85,37 +106,36 @@
             <div class="col-md-4"> 
               <div class="form-group">
                 <label for="dataVencimento">Dia do vencimento:</label>
-                <input type="text" class="form-control" name="dataVencimento" placeholder="Digite o dia do vencimento" required>
+                <input type="number" class="form-control" name="dataVencimento" placeholder="Digite o dia do vencimento" required>
               </div>
             </div>
 
             <div class="col-md-4"> 
                 <div class="form-group">
                     <label for="dataDuracao">Duração do contrato:</label>
-                    <input type="text" class="form-control" name="dataDuracao" placeholder="dd-mm-aaaa" required>
+                    <input type="number" class="form-control" name="dataDuracao" placeholder="dd-mm-aaaa" required>
                 </div>
             </div> 
         </div>
 
-        <div class="col-md-2 offset-md-10">
-            <div class="form-group text-center">
-              <button class="btn btn-dark" type="submit">Gerar contrato</button>
-            </div>
+        <div class="text-right">
+            <button class="btn btn-dark" type="submit">Gerar contrato</button>
         </div>
     </form>
+</div><br/>
 
 
-    <div class="input-group h2">
+	<div class="input-group mb-3">
         <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar">
-        <span class="input-group-btn">
+          <div class="input-group-append">
             <button class="btn btn-dark" type="submit">
 				<i class="material-icons">search</i>
             </button>
-        </span>
+        </div>
     </div>
     
     <table class="table table-striped">        
-        <thead class="thead-dark">        
+        <thead class="thead-dark" align="center">        
             <tr>
                 <th>Imóvel</th>
                 <th>Locatário</th>
@@ -126,68 +146,68 @@
             </tr>
         </thead>
 
-        <tbody>
+        <tbody align="center">
             <tr>
-                <td>ap1</td>
+                <td>Apartamento 785 Villagio de Roma</td>
                 <td>Maria Amália</td>
                 <td>21-05-2018</td>
                 <td>21-12-2018</td>
                 <td>R$400</td>
                 <td>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">remove_red_eye</i></button>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">edit</i></button>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">print</i></button>
+                    <button class="btn btn-info" type="button"><i class="material-icons">remove_red_eye</i></button>
+                    <button class="btn btn-warning" type="button"><i class="material-icons">edit</i></button>
+                    <button class="btn btn-dark" type="button"><i class="material-icons">print</i></button>
                 </td>
             </tr>
 
             <tr>
-                <td>ap2</td>
+                <td>Casa Altiplano</td>
                 <td>Maria Bruna</td><td>21-05-2018</td>
                 <td>21-12-2018</td>
                 <td>R$500</td>
                 <td>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">remove_red_eye</i></button>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">edit</i></button>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">print</i></button>
+                    <button class="btn btn-info" type="button"><i class="material-icons">remove_red_eye</i></button>
+                    <button class="btn btn-warning" type="button"><i class="material-icons">edit</i></button>
+                    <button class="btn btn-dark" type="button"><i class="material-icons">print</i></button>
                 </td>
             </tr>
             
             <tr>
-                <td>casa X</td>
+                <td>Apartamento 200 Almanara</td>
                 <td>Maria Clarissa</td>
                 <td>21-05-2018</td>
                 <td>21-12-2018</td>
                 <td>R$600</td>
                 <td>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">remove_red_eye</i></button>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">edit</i></button>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">print</i></button>
+                    <button class="btn btn-info" type="button"><i class="material-icons">remove_red_eye</i></button>
+                    <button class="btn btn-warning" type="button"><i class="material-icons">edit</i></button>
+                    <button class="btn btn-dark" type="button"><i class="material-icons">print</i></button>
                 </td>
             </tr>
             
             <tr>
-                <td>chácara Y</td>
+                <td>Chácara NBS</td>
                 <td>Maria Daniela</td>
                 <td>21-05-2018</td>
                 <td>21-12-2018</td>
                 <td>R$2.000,00</td>
                 <td>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">remove_red_eye</i></button>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">edit</i></button>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">print</i></button>
+                    <button class="btn btn-info" type="button"><i class="material-icons">remove_red_eye</i></button>
+                    <button class="btn btn-warning" type="button"><i class="material-icons">edit</i></button>
+                    <button class="btn btn-dark" type="button"><i class="material-icons">print</i></button>
                 </td>
             </tr>
 
             <tr>
-                <td>fazenda z</td>
+                <td>Apartamento 354 Montalcino</td>
                 <td>Maria Elisa</td>
                 <td>21-05-2018</td>
                 <td>21-12-2018</td>
                 <td>R$4.000,00</td>
                 <td>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">remove_red_eye</i></button>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">edit</i></button>
-                    <button class="btn btn-danger" type="button"><i class="material-icons">print</i></button>
+                    <button class="btn btn-info" type="button"><i class="material-icons">remove_red_eye</i></button>
+                    <button class="btn btn-warning" type="button"><i class="material-icons">edit</i></button>
+                    <button class="btn btn-dark" type="button"><i class="material-icons">print</i></button>
                 </td>
             </tr>
         </tbody>
