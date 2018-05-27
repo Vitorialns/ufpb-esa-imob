@@ -1,40 +1,41 @@
 <div class="container">
-  <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
-      <div>
-      <label for="proprietario">Proprietário</label>
-            <input type="text" class="form-control" name="proprietario" placeholder="Nome do Proprietário" required [(ngModel)]="proprietario">
-            <tbody *ngFor="let cliente of todosCliente | filterdata: proprietario  : 'nome' ; let i = index">
-            <div *ngIf="cliente.tipo2== 'Locador' ">
-              <td (click)="escolhaClienteLocador(cliente)">{{cliente.nome}}</td>
-            </div>
-        </tbody>
-        <label for="proprietario">Locatário</label>
-            <input type="text" class="form-control" name="locatario" placeholder="Nome do locatario" required [(ngModel)]="proprietario">
-            <tbody *ngFor="let cliente of todosCliente | filterdata: locatario  : 'nome' ; let i = index">
-            <div *ngIf="cliente.tipo2== 'Locatário' ">
-              <td (click)="escolhaClienteLocatario(cliente)">{{cliente.nome}}</td>
-            </div>
-        </tbody>
-        <label for="datadenacscimento">Data de vencimento</label>
-        <input type="date" name="datadevencimento" class="form-control" ngModel>
-      </div>
-      <div>
-        <label for="fname">Data inicial</label>
-        <input type="date" name="datafinal" class="form-control" ngModel>
-      </div>
-      <div>
-          <label for="fname">Data final</label>
-          <input type="date" name="datainicial" class="form-control" ngModel>
-      </div>
-      <div>
-          <label for="fname">Valor do aluguel</label>
-          <input type="number" name="valoraluguel" class="form-control" ngModel>
-      </div>
-      <div>
-          <label for="fname">Valor do condominio</label>
-          <input type="number" name="valorcondominio" class="form-control" ngModel>
-      </div>
-              
-      <input type="submit" value="save" class="btn btn-success">
-  </form>
-</div>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+        <div>
+        <label for="proprietario">Proprietário</label>
+              <input type="text" class="form-control" name="proprietario" placeholder="Nome do Proprietário" required [(ngModel)]="imovel.clientelocador.nome">
+              <!--<tbody *ngFor="let cliente of todosCliente | filterdata: proprietario  : 'nome' ; let i = index">
+              <div *ngIf="cliente.tipo2== 'Locador' ">
+                <td (click)="escolhaClienteLocador(cliente)">{{cliente.nome}}</td>
+              </div>
+          </tbody>-->
+          <label for="proprietario">Locatário</label>
+              <input type="text" class="form-control" name="locatario" placeholder="Nome do locatario" required [(ngModel)]="proprietario">
+              <tbody *ngFor="let cliente of todosCliente | filterdata: locatario  : 'nome' ; let i = index">
+              <div *ngIf="cliente.tipo2== 'Locatário' ">
+                <td (click)="escolhaClienteLocatario(cliente, imovel)">{{cliente.nome}}</td>
+              </div>
+          </tbody>
+          <label for="datadenacscimento">Data de vencimento</label>
+          <input type="date" name="datadevencimento" class="form-control" ngModel>
+        </div>
+        <div>
+          <label for="fname">Data inicial</label>
+          <input type="date" name="datafinal" class="form-control" ngModel>
+        </div> 
+        <div>
+            <label for="fname">Data final</label>
+            <input type="date" name="datainicial" class="form-control" ngModel>
+        </div>
+        <div>
+            <label for="fname">Valor do aluguel</label>
+            <input type="number" name="valoraluguel" class="form-control" ngModel>
+        </div>
+        <div>
+            <label for="fname">Valor do condominio</label>
+            <input type="number" name="valorcondominio" class="form-control" ngModel>
+        </div>
+                
+        <input type="submit" value="save" class="btn btn-success">
+    </form> 
+  </div>
+  

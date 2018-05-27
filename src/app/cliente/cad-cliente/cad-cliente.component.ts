@@ -1,8 +1,8 @@
-///<reference path="../cliente.ts"/>
+//<reference path="../cliente.ts"/>
 import { Component, OnInit, ValueProvider, Input } from '@angular/core';
 import { NgForm, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Cliente } from '../cliente';
+import { Cliente } from '../../model/cliente';
 import { ClienteService } from '../../servico/cliente.service'
 
 //import { ClienteService } from '../cliente.service';
@@ -30,7 +30,6 @@ export class CadClienteComponent implements OnInit {
   }
 
   onSubmit(f: any) {
-    if(this.cliente.id==undefined){
       this.cliente.nome=f.nome;
       this.cliente.tipo1=f.tipo1;
       this.cliente.tipo2=f.tipo2;
@@ -55,7 +54,6 @@ export class CadClienteComponent implements OnInit {
       }, (error) => {
         console.log(error);
       });
-    }
   }
   
 }

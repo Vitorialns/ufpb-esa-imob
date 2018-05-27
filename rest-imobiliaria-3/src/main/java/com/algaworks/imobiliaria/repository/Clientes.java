@@ -4,12 +4,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.algaworks.imobiliaria.model.Cliente;
-
-import java.util.List;
+import java.util.Optional;
 
 
 
 @Repository
 public interface Clientes extends JpaRepository<Cliente, Long>{
-	public List<Cliente> findByNomeContaining(String nome);
+	public Optional<Cliente> findById(Long id);
 } 

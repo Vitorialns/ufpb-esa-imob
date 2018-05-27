@@ -2,7 +2,7 @@ import { Component, OnInit, ValueProvider, Input } from '@angular/core';
 import { NgForm, FormGroup, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ImovelService } from '../../servico/imovel.service'
-import { Imovel } from '../imovel'
+import { Imovel } from '../../model/imovel'
 
 
 @Component({
@@ -31,7 +31,6 @@ export class EditImovelComponent implements OnInit {
 
     onSubmit(f: any) {
       this.imovelService.updateImovel(this.imovel).subscribe((imovel) => {
-        console.log(imovel);
         this.router.navigate(['imoveis']);
       }, (error) => {
         console.log(error);

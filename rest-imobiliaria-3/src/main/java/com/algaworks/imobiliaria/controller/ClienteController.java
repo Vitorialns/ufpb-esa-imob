@@ -48,10 +48,5 @@ public class ClienteController {
 	public Cliente updateCliente(@RequestBody Cliente cliente) {
 		return c.save(cliente);
 	}
-	public List<Cliente> buscaCliente(NomeFiltro nome) {
-		String nomeCliente = nome.getNome();
-		return c.findByNomeContaining(nomeCliente);
-	}
-	
 
 }

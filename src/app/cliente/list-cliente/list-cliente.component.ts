@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../cliente';
-import { ClienteService } from '../../servico/cliente.service'
+import { Cliente } from '../../model/cliente';
+import { ClienteService } from '../../servico/cliente.service';
 import { Router } from '@angular/router';
 import { FilterdataPipe } from '../../filterdata.pipe';
 //import { CadClienteComponent } from '../cad-cliente/cad-cliente.component'

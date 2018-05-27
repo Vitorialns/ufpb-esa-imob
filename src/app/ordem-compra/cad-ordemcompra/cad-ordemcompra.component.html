@@ -1,0 +1,22 @@
+<div class="container">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+    <label for="proprietario">Imovel</label>
+    <input type="text" class="form-control" name="id" placeholder="Id do imovel" required [(ngModel)]="id">
+    <tbody *ngFor="let imovel of todosImoveis | filterdata: id  : 'nome' ; let i = index">
+        <td (click)="escolhaimovel(imovel)">{{imovel.id}}</td>
+    </tbody>
+    <div>
+      <label for="empresa">Empresa</label>
+      <input type="text" name="empresa" class="form-control" ngModel>
+    </div>
+    <div>
+      <label for="fname">Data</label>
+      <input type="date" name="data" class="form-control" ngModel>
+  </div>
+  <div>
+    <label for="empresa">Detalhes</label>
+    <input type="text" name="detalhes" class="form-control" ngModel>
+  </div>
+  <input type="submit" value="salvar" class="btn btn-success">
+  </form>
+</div>

@@ -3,9 +3,9 @@ import { ValueProvider, Input } from '@angular/core';
 import { NgForm, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ImovelService } from '../../servico/imovel.service'
-import { Imovel } from '../imovel'
-import { Contrato } from '../../contrato/contrato';
-import { Cliente } from '../../cliente/cliente';
+import { Imovel } from '../../model/imovel'
+import { Contrato } from '../../model/contrato';
+import { Cliente } from '../../model/cliente';
 import { ContratoService } from '../../servico/contrato.service';
 import { ClienteService } from '../../servico/cliente.service';
 import { FilterdataPipe } from '../../filterdata.pipe';
@@ -31,18 +31,20 @@ export class ListImovelComponent implements OnInit {
 
   ngOnInit() {
     this.imovelService.getImoveis().subscribe((todosImoveis) => {
-      console.log(todosImoveis);
       this.todosImoveis=todosImoveis;
+      console.log(todosImoveis)
     },(error) => {
       console.log(error);
     })
 
     this.clienteService.getClientes().subscribe((todosClientes) => {
-      console.log(todosClientes);
       this.todosClientes=todosClientes;
+      
     },(error) => {
       console.log(error);
     })
+
+    
   }
 
   show(imovel) {
@@ -50,25 +52,18 @@ export class ListImovelComponent implements OnInit {
     this.router.navigate(['/imoveis/', imovel.id]);
   }
 
-  /*gerarContrato(imovel, cliente) {
-    this.contratoService.setter(cliente);
-    this.imovelService.setter(imovel)
-    this.router.navigate(['/contratos/', cliente.id,'/',imovel.id]);
-  }*/
-  gerarContrato() {
-    this.imovel=this.imovelService.getter();
+  gerarContrato(imovel) {
+    this.imovelService.setter(imovel);
     this.cliente=this.clienteService.getter();
     this.imovelService.getImoveis().subscribe((todosImoveis) => {
-      console.log(this.imovel);
       this.todosImoveis=todosImoveis;
     },(error) => {
       console.log(error);
     })
     this.clienteService.getClientes().subscribe((todosClientes) => {
-      console.log(this.cliente);
       this.todosClientes=todosClientes;
     },(error) => {
-      console.log(error);
+     console.log(error); 
     })
     this.router.navigate(['contratos/new']);
   }

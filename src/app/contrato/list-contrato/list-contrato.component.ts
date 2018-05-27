@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Contrato } from '../contrato';
+import {Contrato} from '../../model/contrato'
 import { ContratoService } from '../../servico/contrato.service';
 import { Router } from '@angular/router';
 import { FilterdataPipe } from '../../filterdata.pipe';

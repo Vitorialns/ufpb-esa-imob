@@ -2,10 +2,14 @@ package com.algaworks.imobiliaria.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Contrato {
@@ -16,9 +20,18 @@ public class Contrato {
 	
 	private Date datafinal;
 	private Date datainicial;
-	private Long idcliente_locatario;
-	private Long idcliente_locador;
-	private Long idimovel;
+	
+	@OneToOne
+	@JoinColumn(name = "clienteLocatario")
+	private Cliente clientelocatario;
+	
+	@OneToOne
+	@JoinColumn(name = "clienteLocador")
+	private Cliente clientelocador;
+	
+	@OneToOne
+	@JoinColumn(name = "idImovel")
+	private Imovel idimovel;
 	private Float valoraluguel;
 	private Float valorcondominio;
 	private Float valortotal;
@@ -49,22 +62,23 @@ public class Contrato {
 	public void setDatainicial(Date datainicial) {
 		this.datainicial = datainicial;
 	}
-	public Long getIdcliente_locatario() {
-		return idcliente_locatario;
+	
+	public Cliente getClientelocatario() {
+		return clientelocatario;
 	}
-	public void setIdcliente_locatario(Long idcliente_locatario) {
-		this.idcliente_locatario = idcliente_locatario;
+	public void setClientelocatario(Cliente clientelocatario) {
+		this.clientelocatario = clientelocatario;
 	}
-	public Long getIdcliente_locador() {
-		return idcliente_locador;
+	public Cliente getClientelocador() {
+		return clientelocador;
 	}
-	public void setIdcliente_locador(Long idcliente_locador) {
-		this.idcliente_locador = idcliente_locador;
+	public void setClientelocador(Cliente clientelocador) {
+		this.clientelocador = clientelocador;
 	}
-	public Long getIdimovel() {
+	public Imovel getIdimovel() {
 		return idimovel;
 	}
-	public void setIdimovel(Long idimovel) {
+	public void setIdimovel(Imovel idimovel) {
 		this.idimovel = idimovel;
 	}
 	public Float getValoraluguel() {

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Contrato } from '../contrato';
+import {Contrato} from '../../model/contrato'
 import { ContratoService } from '../../servico/contrato.service';
 import { Router } from '@angular/router';
+import { Imovel } from '../../model/imovel'
+import { ImovelService } from '../../servico/imovel.service';
+
 
 @Component({
   selector: 'app-show-contrato',
@@ -9,15 +12,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./show-contrato.component.css']
 })
 export class ShowContratoComponent implements OnInit {
+  private imovel: Imovel;
   private todosContrato: Contrato[];
+  private todosImoveis: Imovel[];
   private contrato: Contrato;
 
   constructor(
     private router: Router,
-    private contratoService: ContratoService
+    private contratoService: ContratoService,
+    private imovelService:ImovelService
   ) { }
 
   ngOnInit() {
+    this.imovel=this.imovelService.getter();
     this.contrato=this.contratoService.getter();
     this.contratoService.getContratos().subscribe((todosContrato) => {
       console.log(todosContrato);
@@ -25,8 +32,21 @@ export class ShowContratoComponent implements OnInit {
     },(error) => {
       console.log(error);
     })
+
+    this.imovelService.getImoveis().subscribe((todosImoveis) => {
+      this.todosImoveis=todosImoveis;
+    },(error) => {
+      console.log(error);
+    })
+
+
   }
-  destroy(contrato) {
+  destroy(contrato, imovel) {
+    this.imovel.clienteLocatario=null;
+    this.imovel.unidadestatus="Disponível";
+    this.imovelService.updateImovel(this.imovel).subscribe((imovel) => {
+      console.log("Imovel Atualizado")
+    })
     this.contratoService.deleteContrato(contrato.id).subscribe((data) => {
     this.todosContrato.splice(this.todosContrato.indexOf(contrato),1)
     this.router.navigate(['/contratos']);
@@ -34,6 +54,7 @@ export class ShowContratoComponent implements OnInit {
       console.log(error);
     })
     }
+    
     edit(contrato) {
       this.contratoService.setter(contrato);
       this.router.navigate(['contratos/:id/edit']);

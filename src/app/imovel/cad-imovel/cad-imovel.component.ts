@@ -2,8 +2,8 @@ import { Component, OnInit, ValueProvider, Input } from '@angular/core';
 import { NgForm, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ImovelService } from '../../servico/imovel.service'
-import { Imovel } from '../imovel'
-import { Cliente } from '../../cliente/cliente';
+import { Imovel } from '../../model/imovel'
+import { Cliente } from '../../model/cliente';
 import { ClienteService } from '../../servico/cliente.service';
 import { FilterdataPipe} from '../../filterdata.pipe'
 @Component({
@@ -33,11 +33,10 @@ export class CadImovelComponent implements OnInit {
       this.todosClientes=todosClientes;
     }, (error) => {
       console.log(error);
-    })
+    }) 
   }
 
-  onSubmit(f: any) {
-    if(this.imovel.id==undefined){
+  Submit(f: any) {
       //this.imovel.proprietario=f.proprietario,
       this.imovel.endereco=f.endereco,
       this.imovel.tipo_imovel=f.tipo_imovel,
@@ -52,10 +51,10 @@ export class CadImovelComponent implements OnInit {
       }, (error) => {
         console.log(error);
       });
-    }
+    
   }
-  escolhaCliente(cliente){
-    this.imovel.proprietario=cliente.nome
-    console.log(cliente.nome)
+  escolhaClienteLocador(cliente) {
+    this.imovel.clientelocador=cliente
+    console.log(cliente)
   }
 }

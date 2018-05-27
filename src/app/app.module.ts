@@ -28,6 +28,16 @@ import { EditContratoComponent } from './contrato/edit-contrato/edit-contrato.co
 import { ShowContratoComponent } from './contrato/show-contrato/show-contrato.component';
 import { ContratoService } from './servico/contrato.service';
 import { FilterdataPipe } from './filterdata.pipe';
+import { CadOrdemcompraComponent } from './ordem-compra/cad-ordemcompra/cad-ordemcompra.component';
+import { EditOrdemcompraComponent } from './ordem-compra/edit-ordemcompra/edit-ordemcompra.component';
+import { ListOrdemcompraComponent } from './ordem-compra/list-ordemcompra/list-ordemcompra.component';
+import { ShowOrdemcompraComponent } from './ordem-compra/show-ordemcompra/show-ordemcompra.component';
+import { CadOrdemservicoComponent } from './ordem-servico/cad-ordemservico/cad-ordemservico.component';
+import { EditOrdemservicoComponent } from './ordem-servico/edit-ordemservico/edit-ordemservico.component';
+import { ListOrdemservicoComponent } from './ordem-servico/list-ordemservico/list-ordemservico.component';
+import { ShowOrdemservicoComponent } from './ordem-servico/show-ordemservico/show-ordemservico.component';
+import { OrdemCompraService } from './servico/ordemcompra.service';
+import { OrdemServicoService } from './servico/ordemservico.service';
 
 
 
@@ -48,6 +58,14 @@ import { FilterdataPipe } from './filterdata.pipe';
     EditContratoComponent,
     ShowContratoComponent,
     FilterdataPipe,
+    CadOrdemcompraComponent,
+    EditOrdemcompraComponent,
+    ListOrdemcompraComponent,
+    ShowOrdemcompraComponent,
+    CadOrdemservicoComponent,
+    EditOrdemservicoComponent,
+    ListOrdemservicoComponent,
+    ShowOrdemservicoComponent,
 
   ],
 
@@ -59,12 +77,14 @@ import { FilterdataPipe } from './filterdata.pipe';
     Ng2SearchPipeModule,
     NgbModule.forRoot(),
     MatIconModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes, { useHash: true })
 
 
   ],
+  exports: [RouterModule],
 
-  providers: [ClienteService, ImovelService, ContratoService],
+  providers: [ClienteService, ImovelService, ContratoService, OrdemCompraService, OrdemServicoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

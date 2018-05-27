@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <label>Id da Ordem</label>
+        {{ordemservico.id}}
+      </div>
+      <div class="col">
+          <label>Proprietário</label>
+          {{ordemservico.idimovel.clientelocador.nome}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <label>Empresa</label>
+          {{ordemservico.funcionario}}
+      </div>
+      <div class="col">
+          <label>Data</label>
+          {{ordemservico.data | date : "longDate"}}
+      </div>
+      <div class="col">
+          <label>Detalhes</label>
+          {{ordemservico.detalhes}}
+      </div>
+    </div>
+  </div>
+  <td><a (click)="destroy(ordemservico)" class="btn btn-danger">excluir</a></td>

@@ -1,40 +1,40 @@
 <div class="container">
     <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
         <div>
-          <label for="datadenacscimento">Data de vencimento</label>
-          <input type="date" name="datadevencimento" class="form-control" [(ngModel)]="cadastro.datadenacscimento">
+          <label for="datafinal">Data de vencimento</label>
+          <input type="datetime" name="datafinal" class="form-control" [(ngModel)]="contrato.datafinal">
         </div>
         <div>
           <label for="fname">Data inicial</label>
-          <input type="date" name="datafinal" class="form-control" [(ngModel)]="cadastro.datafinal">
+          <input type="datetime" name="datainicial" class="form-control" [(ngModel)]="contrato.datainicial">
         </div>
         <div>
             <label for="fname">Data final</label>
-            <input type="date" name="datainicial" class="form-control" [(ngModel)]="cadastro.datainicial">
+            <input type="datetime" name="datainicial" class="form-control" [(ngModel)]="contrato.datainicial">
         </div>
         <div>
             <label for="fname">Valor do aluguel</label>
-            <input type="number" name="valoraluguel" class="form-control" [(ngModel)]="cadastro.valoraluguel">
+            <input type="number" name="valoraluguel" class="form-control" [(ngModel)]="contrato.valoraluguel">
         </div>
         <div>
             <label for="fname">Valor Total</label>
-            <input type="number" name="valortotal" class="form-control" [(ngModel)]="cadastro.valortotal">
+            <input type="number" name="valortotal" class="form-control" [(ngModel)]="contrato.valortotal">
         </div>
         <div>
             <label for="fname">Valor do condominio</label>
-            <input type="number" name="valorcondominio" class="form-control" [(ngModel)]="cadastro.valorcondominio">
+            <input type="number" name="valorcondominio" class="form-control" [(ngModel)]="contrato.valorcondominio">
         </div>
         <div>
             <label for="fname">Imovel</label>
-            <input type="number" name="idimovel" class="form-control" [(ngModel)]="cadastro.idimovel">
+            <input type="number" name="idimovel" class="form-control" [(ngModel)]="contrato.idimovel.id">
         </div>
         <div>
             <label for="fname">Locador</label>
-            <input type="number" name="idcliente_locador" class="form-control" [(ngModel)]="cadastro.idcliente_locador">
+            <input type="text" name="idcliente_locador" class="form-control" [(ngModel)]="contrato.clientelocador.nome">
         </div>
         <div>
             <label for="fname">Locatario</label>
-            <input type="number" name="idcliente_locatario" class="form-control" [(ngModel)]="cadastro.idcliente_locatario">
+            <input type="text" name="idcliente_locatario" class="form-control" [(ngModel)]="contrato.clientelocatario.nome">
         </div>
                 
         <input type="submit" value="save" class="btn btn-success">

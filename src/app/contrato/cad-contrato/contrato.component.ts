@@ -1,10 +1,10 @@
 import { Component, OnInit, ValueProvider, Input } from '@angular/core';
 import { NgForm, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Imovel } from '../../imovel/imovel';
-import { Cliente } from '../../cliente/cliente';
+import { Imovel } from '../../model/imovel'
+import { Cliente } from '../../model/cliente'; 
 import { ContratoService } from '../../servico/contrato.service';
-import { Contrato } from '../contrato';
+import { Contrato } from '../../model/contrato';
 import { ClienteService } from '../../servico/cliente.service';
 import { ImovelService } from '../../servico/imovel.service';
 import { FilterdataPipe } from '../../filterdata.pipe';
@@ -20,8 +20,8 @@ export class ContratoComponent implements OnInit {
   private cliente: Cliente;
   private imovel: Imovel;
   private todosContrato: Contrato[];
-  private todosCliente: Contrato[];
-  private todosImoveis: Contrato[];
+  private todosCliente: Cliente[];
+  private todosImoveis: Imovel[];
 
   constructor( 
     private router: Router,
@@ -54,16 +54,18 @@ export class ContratoComponent implements OnInit {
       console.log(error);
     })
     
+  } 
+    escolhaClienteLocatario(cliente, imovel) {
+    this.contrato.clientelocatario=cliente
+    this.contrato.clientelocador=imovel.clientelocador
+    this.imovel.clienteLocatario=cliente
+    this.imovel.unidadestatus="Ocupado"
+    this.imovelService.updateImovel(this.imovel).subscribe((imovel) => {
+      console.log("Imovel Atualizado")
+    })
+    this.contrato.idimovel=imovel
   }
-  escolhaClienteLocador(cliente) {
-    this.contrato.idcliente_locador=cliente.nome
-  }
-
-  escolhaClienteLocatario(cliente) {
-    this.contrato.idcliente_locatario=cliente.nome
-  }
-  onSubmit(f: any) { 
-    if(this.cliente.id==undefined){      
+  onSubmit(f: any) {      
       this.contrato.datadevencimento=f.datadevencimento;//
       this.contrato.datafinal=f.datafinal;//
       this.contrato.datainicial=f.datainicial;//
@@ -79,16 +81,6 @@ export class ContratoComponent implements OnInit {
       }, (error) => {
         console.log(error);
       });
-      console.log("cntratos a baixo")
-      console.log(this.contrato);
-    }else{
-      this.contratoService.updateContrato(this.contrato).subscribe((contrato) => {
-        console.log(contrato);
-        this.router.navigate(['contratos']);
-      }, (error) => {
-        console.log(error);
-      });
-    } 
   }
 
   

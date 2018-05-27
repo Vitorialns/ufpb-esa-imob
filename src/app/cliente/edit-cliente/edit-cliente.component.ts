@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Cliente } from '../cliente';
+import { Cliente } from '../../model/cliente';
 import { ClienteService } from '../../servico/cliente.service'
 
 @Component({
@@ -24,7 +24,6 @@ export class EditClienteComponent implements OnInit {
   onSubmit(f: any) {
     
     this.clienteService.updateCliente(this.cliente).subscribe((cliente) => {
-      console.log(cliente);
       this.router.navigate(['clientes']);
     }, (error) => {
       console.log(error);

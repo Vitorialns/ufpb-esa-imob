@@ -13,6 +13,17 @@ import { ContratoComponent } from './contrato/cad-contrato/contrato.component';
 import { EditContratoComponent } from './contrato/edit-contrato/edit-contrato.component';
 import { ListContratoComponent } from './contrato/list-contrato/list-contrato.component';
 import { ShowContratoComponent } from './contrato/show-contrato/show-contrato.component';
+//import { CadParcelaComponent } from './parcelas/cad-parcela/cad-parcela.component';
+//import { ShowParcelaComponent } from './parcelas/show-parcela/show-parcela.component';
+import { CadOrdemcompraComponent } from './ordem-compra/cad-ordemcompra/cad-ordemcompra.component';
+import { ListOrdemcompraComponent } from './ordem-compra/list-ordemcompra/list-ordemcompra.component';
+import { EditOrdemcompraComponent } from './ordem-compra/edit-ordemcompra/edit-ordemcompra.component';
+import { ShowOrdemcompraComponent } from './ordem-compra/show-ordemcompra/show-ordemcompra.component';
+import { CadOrdemservicoComponent } from './ordem-servico/cad-ordemservico/cad-ordemservico.component';
+import { ListOrdemservicoComponent } from './ordem-servico/list-ordemservico/list-ordemservico.component';
+import { ShowOrdemservicoComponent } from './ordem-servico/show-ordemservico/show-ordemservico.component';
+import { EditOrdemservicoComponent } from './ordem-servico/edit-ordemservico/edit-ordemservico.component';
+
 
 export const routes: Routes = [
   { path: "clientes", component: ListClienteComponent},
@@ -30,9 +41,19 @@ export const routes: Routes = [
   { path: 'contratos/:id', component: ShowContratoComponent },
   { path: 'contratos/:id/edit', component: EditContratoComponent },
 
-  {
-    path: '', redirectTo: '', pathMatch: 'full'
-  },
+  //{path: 'parcelas', component: CadParcelaComponent},
+  //{path: 'parcelas/:id', component: ShowParcelaComponent},
+
+  { path: 'ordensc', component: ListOrdemcompraComponent },
+  { path: 'ordemc/new', component: CadOrdemcompraComponent },
+  { path: 'ordemc/:id', component: ShowOrdemcompraComponent },
+  { path: 'ordemc/:id/edit', component: EditOrdemcompraComponent },
+
+  { path: 'ordenss', component: ListOrdemservicoComponent },
+  { path: 'ordems/new', component: CadOrdemservicoComponent },
+  { path: 'ordems/:id', component: ShowOrdemservicoComponent },
+  { path: 'ordems/:id/edit', component: EditOrdemservicoComponent  },
+
   {
     path: '**',
     component: ListImovelComponent
@@ -46,3 +67,4 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 export class RouteRoutingModule { }
+

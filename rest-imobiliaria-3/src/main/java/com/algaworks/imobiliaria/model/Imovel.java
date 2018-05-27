@@ -1,9 +1,12 @@
 package com.algaworks.imobiliaria.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Imovel {
@@ -12,14 +15,14 @@ public class Imovel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	private Long id_proprietario;
-	private String proprietario;
+	@OneToOne
+	@JoinColumn(name = "clienteLocador")
+	private Cliente clientelocador;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "clienteLocatario")
+	private Cliente clienteLocatario;
+	
 	private String endereco;
 	private String tipo_imovel;
 	private String unidadestatus;
@@ -28,18 +31,14 @@ public class Imovel {
 	private String observacoes;
 	
 	
-	public Long getId_proprietario() {
-		return id_proprietario;
+	public Long getId() {
+		return id;
 	}
-	public void setId_proprietario(Long id_proprietario) {
-		this.id_proprietario = id_proprietario;
+	public void setId(Long id) {
+		this.id = id;
 	}
-	public String getProprietario() {
-		return proprietario;
-	}
-	public void setProprietario(String proprietario) {
-		this.proprietario = proprietario;
-	}
+	
+
 	public String getEndereco() {
 		return endereco;
 	}
@@ -75,5 +74,27 @@ public class Imovel {
 	}
 	public void setObservacoes(String observacoes) {
 		this.observacoes = observacoes;
+	}/*
+	public ClienteLocador getClientelocador() {
+		return clientelocador;
 	}
+	public void setClientelocador(ClienteLocador clientelocador) {
+		this.clientelocador = clientelocador;
+	}*/
+	public Cliente getClientelocador() {
+		return clientelocador;
+	}
+	public void setClientelocador(Cliente clientelocador) {
+		this.clientelocador = clientelocador;
+	}
+	public Cliente getClienteLocatario() {
+		return clienteLocatario;
+	}
+	public void setClienteLocatario(Cliente clienteLocatario) {
+		this.clienteLocatario = clienteLocatario;
+	}
+	
+	
+	
+	
 }

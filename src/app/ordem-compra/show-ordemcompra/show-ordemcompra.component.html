@@ -1,0 +1,52 @@
+<!--
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th id="nameHeader">id</th>
+      <th id="endHeader">Proprietário</th>
+      <th id="endHeader">Empresa</th>
+      <th id="endHeader">Data</th>
+      <th id="endHeader">Detalhes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td>{{ordemcompra.id}}</td>
+        <td>{{ordemcompra.idimovel.clientelocador.nome}}</td>
+        <td>{{ordemcompra.empresa}}</td>
+        <td>{{ordemcompra.data | date : "longDate"}}</td>
+        <td>{{ordemcompra.detalhes}}</td>
+        <th colspan="3"></th>
+        <td><a (click)="destroy(ordemcompra)" class="btn btn-danger">excluir</a></td>
+      </tr>
+    </tbody>
+  -->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <label>Id da Ordem</label>
+          {{ordemcompra.id}}
+        </div>
+        <div class="col">
+            <label>Proprietário</label>
+            {{ordemcompra.idimovel.clientelocador.nome}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+            <label>Empresa</label>
+            {{ordemcompra.empresa}}
+        </div>
+        <div class="col">
+            <label>Data</label>
+            {{ordemcompra.data | date : "longDate"}}
+        </div>
+        <div class="col">
+            <label>Detalhes</label>
+            {{ordemcompra.detalhes}}
+        </div>
+      </div>
+    </div>
+    <td><a (click)="destroy(ordemcompra)" class="btn btn-danger">excluir</a></td>

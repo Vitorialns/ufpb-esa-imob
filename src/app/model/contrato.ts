@@ -1,10 +1,13 @@
+import { Cliente } from "./cliente";
+import { Imovel } from "./imovel";
+
 export class Contrato {
     id: Number;
     datafinal: Date;
     datainicial: Date;
-    idcliente_locatario: Number;
-    idcliente_locador: Number;
-    idimovel: Number;
+    clientelocatario: Cliente;
+    clientelocador: Cliente;
+    idimovel: Imovel;
     valoraluguel: Number;
     valorcondominio: Number;
     valortotal: Number;
