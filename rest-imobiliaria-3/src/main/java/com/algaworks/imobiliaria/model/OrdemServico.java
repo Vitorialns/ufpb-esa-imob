@@ -18,8 +18,8 @@ public class OrdemServico {
 	private Long id;
 	
 	@OneToOne
-	@JoinColumn(name = "idImovel")
-	private Imovel idimovel;
+	@JoinColumn(name = "contrato")
+	private Contrato contrato;
 	private String funcionario;
 	private Date data;
 	private String detalhes;
@@ -42,11 +42,12 @@ public class OrdemServico {
 	public void setData(Date data) {
 		this.data = data;
 	}
-	public Imovel getIdimovel() {
-		return idimovel;
+	
+	public Contrato getContrato() {
+		return contrato;
 	}
-	public void setIdimovel(Imovel idimovel) {
-		this.idimovel = idimovel;
+	public void setContrato(Contrato contrato) {
+		this.contrato = contrato;
 	}
 	public String getFuncionario() {
 		return funcionario;

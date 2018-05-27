@@ -5,6 +5,8 @@ import { NgForm, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Imovel } from '../../model/imovel';
 import { ImovelService } from '../../servico/imovel.service';
+import { Contrato } from '../../model/contrato';
+import { ContratoService } from '../../servico/contrato.service';
 
 @Component({
   selector: 'app-cad-ordemservico',
@@ -13,20 +15,20 @@ import { ImovelService } from '../../servico/imovel.service';
 })
 export class CadOrdemservicoComponent implements OnInit {
   private ordemservico: OrdemServico;
-  private imovel: Imovel;
+  private contrato: Contrato;
 
   private todasordens: OrdemServico[];
-  private todosImoveis: Imovel[];
+  private todosContratos: Contrato[];
   constructor(
     private router: Router,
     private ordemservicoservice: OrdemServicoService,
-    private imovelService:ImovelService
+    private contratoService:ContratoService
   ) { }
 
   ngOnInit() {
     this.ordemservico=this.ordemservicoservice.getter();
-    this.imovelService.getImoveis().subscribe((todosImoveis) => {
-      this.todosImoveis=todosImoveis;
+    this.contratoService.getContratos().subscribe((todosContratos) => {
+      this.todosContratos=todosContratos;
     },(error) => {
       console.log(error);
     })
@@ -42,12 +44,9 @@ export class CadOrdemservicoComponent implements OnInit {
         console.log(error);
       });
     }
-    escolhaimovel(imovel) {
-      this.ordemservico.idimovel=imovel
-      console.log(imovel)
+    escolhaimovel(contrato) {
+      this.ordemservico.contrato=contrato
+      console.log(contrato)
     }
-
-
-
 }
  

@@ -38,8 +38,8 @@ export class CadClienteComponent implements OnInit {
       this.cliente.profissao=f.profissao;
       this.cliente.rg=f.rg;
       this.cliente.orgao=f.orgao;
-      this.cliente.ufcliente=f.ufcliente;
-      this.cliente.endereco=f.endereco;
+      this.cliente.rua=f.endereco;
+      this.cliente.estado=f.ufcliente;      
       this.cliente.bairro=f.bairro;
       this.cliente.numero=f.numero;
       this.cliente.cidade=f.cidade;

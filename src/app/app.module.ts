@@ -38,6 +38,7 @@ import { ListOrdemservicoComponent } from './ordem-servico/list-ordemservico/lis
 import { ShowOrdemservicoComponent } from './ordem-servico/show-ordemservico/show-ordemservico.component';
 import { OrdemCompraService } from './servico/ordemcompra.service';
 import { OrdemServicoService } from './servico/ordemservico.service';
+import { EnderecoService } from './servico/enderecoservice'
 
 
 
@@ -84,7 +85,7 @@ import { OrdemServicoService } from './servico/ordemservico.service';
   ],
   exports: [RouterModule],
 
-  providers: [ClienteService, ImovelService, ContratoService, OrdemCompraService, OrdemServicoService],
+  providers: [ClienteService, EnderecoService, ImovelService, ContratoService, OrdemCompraService, OrdemServicoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

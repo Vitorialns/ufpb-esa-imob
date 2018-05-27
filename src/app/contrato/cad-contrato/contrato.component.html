@@ -11,12 +11,17 @@
           <label for="proprietario">Locatário</label>
               <input type="text" class="form-control" name="locatario" placeholder="Nome do locatario" required [(ngModel)]="proprietario">
               <tbody *ngFor="let cliente of todosCliente | filterdata: locatario  : 'nome' ; let i = index">
-              <div *ngIf="cliente.tipo2== 'Locatário' ">
+              <div *ngIf="cliente.tipo2== 'Locatário'">
                 <td (click)="escolhaClienteLocatario(cliente, imovel)">{{cliente.nome}}</td>
               </div>
           </tbody>
+          <label for="proprietario">Fiador</label>
+              <input type="text" class="form-control" name="fiador" placeholder="Nome do fiador" required [(ngModel)]="fiador">
+              <tbody *ngFor="let fiador of todosCliente | filterdata: fiador  : 'nome' ; let i = index">
+                <td (click)="escolhaClienteFiador(fiador)">{{fiador.nome}}</td>
+          </tbody>
           <label for="datadenacscimento">Data de vencimento</label>
-          <input type="date" name="datadevencimento" class="form-control" ngModel>
+          <input type="number" name="datadevencimento" class="form-control" ngModel>
         </div>
         <div>
           <label for="fname">Data inicial</label>

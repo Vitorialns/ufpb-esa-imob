@@ -55,7 +55,7 @@ export const routes: Routes = [
   { path: 'ordems/:id/edit', component: EditOrdemservicoComponent  },
 
   {
-    path: '**',
+    path: '#/**',
     component: ListImovelComponent
   },
 

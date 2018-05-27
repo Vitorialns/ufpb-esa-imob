@@ -1,22 +1,165 @@
-<table class="table table-hover table-sm">
-  <thead>
-    <tr>
-      <th id="nameHeader">id</th>
-      <th id="nameHeader">Valor</th>
-      <th id="endHeader">Locador</th>
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" src="src/assets/css/style.css">
+  <meta charset="UTF-8">
+  <title>IMOBILIÁRIA</title>
+  <style>
+    .icn {
+      vertical-align: middle !important;
+    }
+  </style>
+</head>
 
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<body>
 
-  <tbody>
-      <tr>
-        <td>{{contrato.id}}</td>
-        <td>{{contrato.valoraluguel}}</td>
-        <td>{{contrato.clientelocador.nome}}</td>
-        <th colspan="3"></th>
-        <td><a (click)="destroy(contrato, contrato.idimovel)" class="btn btn-danger">excluir</a></td>
-        <td><a (click)="edit(contrato)" class="btn btn-secondary">editar</a></td>
-      </tr>
-    </tbody>
-<!--"-->
+
+  <div class="container col-md-12 text-center">
+    <div class="col text-right d-print-none">
+      <br/>
+      <td><a (click)="edit(contrato)" class="btn btn-secondary">editar</a></td>
+      <td><a (click)="destroy(contrato, contrato.idimovel)" class="btn btn-danger">excluir</a></td>
+      <button class="btn btn-warning"  onclick="history.go(-1)"> Voltar <i class="material-icons icn"> arrow_back </i></button>
+      <button class="btn btn-dark" onclick="print()"> Imprimir <i class="material-icons icn"> print </i></button>
+    </div>
+    <br/>
+    <div class="row text-center border-bottom">
+      <div class="col h3 icn">
+        CONTRATO DE LOCAÇÃO DE IMÓVEL
+        <br/>
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="row text-justify" id="printable">
+      <div class="col">
+        <b>LOCADOR</b>: <b>{{contrato.clientelocador.nome}}</b>, <b>{{contrato.clientelocador.profissao}}</b>, portador da cédula de identidade R.G. nº<b>{{contrato.clientelocador.rg}}</b> e CPF/MF ou CNPJ nº <b>{{contrato.clientelocador.cpfcnpj}}</b>.
+        <br/>
+        <br/> <b>LOCATÁRIO</b>: <b>{{contrato.clientelocatario.nome}}</b>, <b>{{contrato.clientelocatario.profissao}}</b>, portador da cédula de identidade R.G. nº <b>{{contrato.clientelocatario.rg}}</b>, e CPF/MF nº <b>{{contrato.clientelocatario.cpfcnpj}}</b>.
+        <br/>
+        <br/> <b>FIADOR</b>: <b>{{contrato.fiador.nome}}</b>, <b>{{contrato.fiador.profissao}}</b>, portador da cédula de identidade R.G. nº <b>{{contrato.fiador.rg}}</b>, e CPF/MF nº <b>{{contrato.fiador.cpfcnpj}}</b>, residente e domiciliado à <b>{{contrato.fiador.rua}}</b>,
+        <b>{{contrato.fiador.numero}}</b>, <b>{{contrato.fiador.bairro}}</b>, <b>{{contrato.fiador.cep}}</b>, <b>{{contrato.fiador.cidade}}</b>, <b>{{contrato.fiador.estado}}</b>.
+        <br/>
+        <br/> <b>CLÁUSULA PRIMEIRA:</b> O objeto deste contrato de locação é o imóvel residencial, situado à <b>{{contrato.idimovel.rua}}</b>, <b>{{contrato.idimovel.numero}}</b>, <b>{{contrato.idimovel.bairro}}</b>, <b>{{contrato.idimovel.cep}}</b>,
+        <b>{{contrato.idimovel.cidade}}</b>, <b>{{contrato.idimovel.estado}}</b>.
+        <br/>
+        <br/> <b>CLÁUSULA SEGUNDA:</b> O prazo da locação é de <b>{{contrato.duracao}}</b> meses, iniciando-se em <b>{{contrato.datainicial | date: "shortDate"}}</b> com término em <b>{{contrato.datafinal | date: "shortDate"}}</b>, independentemente e aviso, notificação ou interpelação judicial
+        ou mesmo extrajudicial.
+        <br/>
+        <br/> <b>CLÁUSULA TERCEIRA:</b> O aluguel mensal, deverá ser pago até o dia <b>{{contrato.diadevencimento}}</b> do mês subseqüente ao vencido, no local indicado pelo <b>LOCADOR</b>, é de R$ <b>{{contrato.valoraluguel}}</b> + R$ <b>{{contrato.valorcondominio}}</b>,
+        reajustados anualmente, de conformidade com a variação do IGP-M apurada no ano anterior, e na sua falta, por outro índice criado pelo Governo Federal e, ainda, em sua substituição, pela Fundação Getúlio Vargas, reajustamento este sempre incidente
+        e calculado sobre o último aluguel pago no último mês do ano anterior.
+        <br/>
+        <br/> <b>CLÁUSULA QUARTA:</b> O <b>LOCATÁRIO</b> será responsável por todos os tributos incidentes sobre o imóvel bem como despesas ordinárias de condomínio, e quaisquer outras despesas que recaírem sobre o imóvel, arcando tambem com as despesas
+        provenientes de sua utilização seja elas, ligação e consumo de luz, força, água e gás que serão pagas diretamente às empresas concessionárias dos referidos serviços.
+        <br/>
+        <br/> <b>CLÁUSULA QUINTA:</b> Em caso de mora no pagamento do aluguel, será aplicada multa de <b>2%</b> sobre o valor devido e juros diários de <b>0.33%</b> do montante devido.
+        <br/>
+        <br/> <b>CLÁUSULA SEXTA:</b> Fica ao <b>LOCATÁRIO</b>, a responsabilidade em zelar pela conservação, limpeza do imóvel, efetuando as reformas necessárias para sua manutenção sendo que os gastos e pagamentos decorrentes da mesma, correrão por conta
+        do mesmo. O <b>LOCATÁRIO</b> está obrigado a devolver o imóvel em perfeitas condições de limpeza, conservação e pintura, quando finda ou rescindida esta avença, conforme constante no termo de vistoria em anexo. O <b>LOCATÁRIO</b> não poderá realizar
+        obras que alterem ou modifiquem a estrutura do imóvel locado, sem prévia autorização por escrito do <b>LOCADOR</b>. Caso este consinta na realização das obras, estas ficarão desde logo, incorporadas ao imóvel, sem que assista ao <b>LOCATÁRIO</b>        qualquer indenização pelas obras ou retenção por benfeitorias. As benfeitorias removíveis poderão ser retiradas, desde que não desfigurem o imóvel locado.
+        <br/>
+        <br/> PARÁGRAFO ÚNICO: O <b>LOCATÁRIO</b> declara receber o imóvel em perfeito estado de conservação e perfeito funcionamento devendo observar o que consta no termo de vistoria.
+        <br/>
+        <br/> <b>CLÁUSULA SÉTIMA:</b> O <b>LOCATÁRIO</b> declara, que o imóvel ora locado, destina-se única e exclusivamente para o seu uso residencial e de sua família.
+        <br/>
+        <br/> <b>PARÁGRAFO ÚNICO:</b> O <b>LOCATÁRIO</b>, obriga por si e sua família, a cumprir e a fazer cumprir integralmente as disposições legais sobre o Condomínio, a sua Convenção e o seu Regulamento Interno.
+        <br/>
+        <br/> <b>CLÁUSULA OITAVA:</b> O <b>LOCATÁRIO</b> não poderá sublocar, transferir ou ceder o imóvel, sendo nulo de pleno direito qualquer ato praticado com este fim sem o consentimento prévio e por escrito do <b>LOCADOR</b>.
+        <br/>
+        <br/> <b>CLÁUSULA NONA:</b> Em caso de sinistro parcial ou total do prédio, que impossibilite a habitação o imóvel locado, o presente contrato estará rescindido, independentemente de aviso ou interpelação judicial ou extrajudicial; no caso de
+        incêndio parcial, obrigando a obras de reconstrução, o presente contrato terá suspensa a sua vigência e reduzida a renda do imóvel durante o período da reconstrução à metade do que na época for o aluguel, e sendo após a reconstrução devolvido
+        o <b>LOCATÁRIO</b> pelo prazo restante do contrato, que ficará prorrogado pelo mesmo tempo de duração das obras de reconstrução.
+        <br/>
+        <br/> <b>CLÁUSULA DÉCIMA :</b> Em caso de desapropriação total ou parcial do imóvel locado, ficará rescindido de pleno direito o presente contrato de locação, independente de quaisquer indenizações de ambas as partes ou contratantes.
+        <br/>
+        <br/> <b>CLÁUSULA DÉCIMA PRIMEIRA:</b> Falecendo o FIADOR, o <b>LOCATÁRIO</b>, em 30 (trinta) dias, dar substituto idôneo que possa garantir o valor locativo e encargos do referido imóvel, ou prestar seguro fiança de empresa idônea.
+        <br/>
+        <br/> <b>CLÁUSULA DÉCIMA SEGUNDA:</b> No caso de alienação do imóvel, obriga-se o <b>LOCADOR</b>, dar preferência ao <b>LOCATÁRIO</b>, e se o mesmo não utilizar-se dessa prerrogativa, o <b>LOCADOR</b> deverá constar da respectiva escritura pública,
+        a existência do presente contrato, para que o adquirente o respeite nos termos da legislação vigente.
+        <br/>
+        <br/> <b>CLÁUSULA DÉCIMA TERCEIRA:</b> O FIADOR e principal pagador do <b>LOCATÁRIO</b>, responde solidariamente por todos os pagamentos descritos neste contrato bem como, não só até o final de seu prazo, como mesmo depois, até a efetiva entrega
+        das chaves ao <b>LOCADOR</b> e termo de vistoria do imóvel.
+        <br/>
+        <b>CLÁUSULA DÉCIMA QUARTA:</b> È facultado ao <b>LOCADOR</b> vistoriar, por si ou seus procuradores, sempre que achar conveniente, para a certeza do cumprimento das obrigações assumidas neste contrato.
+        <br/>
+        <br/> <b>CLÁUSULA DÉCIMA QUINTA:</b> A infração de qualquer das cláusulas do presente contrato, sujeita o infrator à multa de duas vezes o valor do aluguel, tomando-se por base, o último aluguel vencido.
+        <br/>
+        <br/> <b>CLÁUSULA DÉCIMA SEXTA:</b> As partes contratantes obrigam-se por si, herdeiros e/ou sucessores, elegendo o Foro da Cidade do (colocar o fórum do município), para a propositura de qualquer ação.
+        <br/>
+        <br/> E, por assim estarem justos e contratados, mandaram extrair o presente instrumento em duas) vias, para um só efeito, assinando-as, juntamente com as testemunhas, a tudo presentes.
+        <br/>
+        <br/>
+        <div class="row text-right">
+          <div class="col">
+            <b>{{contrato.idimovel.cidade}}</b>, <b>{{contrato.datainicial | date : "longDate"}}</b>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col">
+
+            <br/>
+            <br/>
+            <br/>
+            <div class="col text-left">Locador:</div>
+            <br/>
+            <br/> ________________________________________
+
+            <br/>
+            <b>{{contrato.clientelocador.nome}}</b>
+            <br/>
+            <b>{{contrato.clientelocador.cpfcnpj}}</b>
+          </div>
+          <div class="col">
+            <br/>
+            <br/>
+            <br/>
+            <div class="col text-left">Locatário:</div>
+
+            <br/>
+            <br/> ________________________________________
+
+            <br/>
+            <b>{{contrato.clientelocatario.nome}}</b>
+            <br/>
+            <b>{{contrato.clientelocatario.cpfcnpj}}</b>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col">
+            <br/>
+            <br/>
+            <br/>
+            <div class="col text-left">Fiador:</div>
+            <br/>
+            <br/> ________________________________________
+            <br/>
+            <b>{{contrato.fiador.nome}}</b>
+            <br/>
+            <b>{{contrato.fiador.cpfcnpj}}</b>
+          </div>
+          <div class="col">
+            <br/>
+            <br/>
+            <br/>
+            <div class="col text-left">Testemunha:</div>
+
+            <br/>
+            <br/> _________________________________________
+            <br/> Nome: _________________________________
+            <br/> CPF:____________________________________
+          </div>
+        </div>
+        <br/>
+
+      </div>
+    </div>
+    <div class="col text-right d-print-none">
+      <button class="btn btn-warning"  onclick="history.go(-1)"> Voltar <i class="material-icons icn"> arrow_back </i></button>
+      <button class="btn btn-dark"> Imprimir <i class="material-icons icn"  onclick="print()"> print </i></button>
+      <br/>
+      <a style="color: #fff"> aaaaaaa </a> <!--gambiarraaaaa -->
+    </div>
+  </div>
+</body>

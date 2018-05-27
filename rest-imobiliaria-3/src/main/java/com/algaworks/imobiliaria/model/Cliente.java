@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import com.algaworks.imobiliaria.model.Endereco;
 
 
 @Entity
@@ -12,16 +15,16 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	private String bairro;
     
-	private  String cep;
+	private String rua;
+	private String numero;
+	private String bairro;
+	private String cep;
 	private String cidade;
+	private String estado;
 	private String cpfcnpj;
 	private String email;
-	private String endereco;
 	private String nome;
-	private String numero;
 	private String orgao;
 	private String profissao;
 	private String rg;
@@ -30,15 +33,23 @@ public class Cliente {
     private String telefone3;
     private String tipo1;
     private String tipo2;
-    private String ufcliente;
     private String ufrg;
     private String datanascimento;
     
-	public Long getId() {
-		return id;
+    
+    
+
+	public String getRua() {
+		return rua;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+	public String getNumero() {
+		return numero;
+	}
+	public void setNumero(String numero) {
+		this.numero = numero;
 	}
 	public String getBairro() {
 		return bairro;
@@ -58,6 +69,18 @@ public class Cliente {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
+	public String getEstado() {
+		return estado;
+	}
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getCpfcnpj() {
 		return cpfcnpj;
 	}
@@ -69,18 +92,6 @@ public class Cliente {
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public String getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-	public String getNumero() {
-		return numero;
-	}
-	public void setNumero(String numero) {
-		this.numero = numero;
 	}
 	public String getOrgao() {
 		return orgao;
@@ -129,12 +140,6 @@ public class Cliente {
 	}
 	public void setTipo2(String tipo2) {
 		this.tipo2 = tipo2;
-	}
-	public String getUfcliente() {
-		return ufcliente;
-	}
-	public void setUfcliente(String ufcliente) {
-		this.ufcliente = ufcliente;
 	}
 	public String getUfrg() {
 		return ufrg;

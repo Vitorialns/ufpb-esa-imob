@@ -29,17 +29,7 @@
               <label for="proprietario">Proprietário</label>
               <input type="text" class="form-control" [(ngModel)]="imovel.clientelocador.nome" name="proprietario" placeholder="Nome completo do Proprietário" required ngModel>
             </div>
-          </div>
-  
-  
-          <div class="col-md-12 text">
-            <div class="form-group">
-              <label for="endereco">Endereço</label>
-              <input type="text" class="form-control" name="endereco" [(ngModel)]="imovel.endereco" placeholder="Endereço do Imóvel" required ngModel>
-  
-            </div>
-          </div>
-  
+          </div>  
   
           <div class="col-md-12 text">
             <div class="form-group">
@@ -78,6 +68,43 @@
               </select>
             </div>
           </div>
+          
+          <div class="col-md-12 text">
+              <div class="form-group">
+                <label for="estado">Estado</label>
+                <input type="text" class="form-control" name="estado" placeholder="Estado UF do Imóvel" required [(ngModel)]="imovel.estado">
+              </div>
+            </div>
+            <div class="col-md-12 text">
+              <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input type="text" class="form-control" name="cidade" placeholder="cidade do Imóvel" required [(ngModel)]="imovel.cidade">
+              </div>
+            </div>
+            <div class="col-md-12 text">
+              <div class="form-group">
+                <label for="bairro">Bairro</label>
+                <input type="text" class="form-control" name="bairro" placeholder="bairro do Imóvel" required [(ngModel)]="imovel.bairro">
+              </div>
+            </div>
+            <div class="col-md-12 text">
+              <div class="form-group">
+                <label for="rua">Rua</label>
+                <input type="text" class="form-control" name="rua" placeholder="rua do Imóvel" required [(ngModel)]="imovel.rua">
+              </div>
+            </div>
+            <div class="col-md-12 text">
+              <div class="form-group">
+                <label for="cep">Cep</label>
+                <input type="text" class="form-control" name="cep" placeholder="cep do Imóvel" required [(ngModel)]="imovel.cep">
+              </div>
+            </div>
+            <div class="col-md-12 text">
+              <div class="form-group">
+                <label for="numero">Numero</label>
+                <input type="text" class="form-control" name="numero" placeholder="numero do Imóvel" required [(ngModel)]="imovel.numero">
+              </div>
+            </div>
   
           <div class="col-md-12 text">
             <div class="form-group">

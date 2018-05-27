@@ -20,7 +20,7 @@
   </thead>
 
   <tbody>
-    <tr (click)="show(contrato)" *ngFor="let contrato of todosContratos| filterdata: searchText : '' ; let i = index">
+    <tr (click)="show(contrato)" *ngFor="let contrato of todosContratos| filterdata: searchText : 'nome' ; let i = index">
       <td>{{contrato.id}}</td>
       <td>{{contrato.valoraluguel}}</td>
       <td>{{contrato.clientelocador.nome}}</td>

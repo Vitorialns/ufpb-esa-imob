@@ -1,27 +1,89 @@
-<div class="container">
-    <div class="row">
-      <div class="col">
-        <label>Id da Ordem</label>
-        {{ordemservico.id}}
-      </div>
-      <div class="col">
-          <label>Proprietário</label>
-          {{ordemservico.idimovel.clientelocador.nome}}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-          <label>Empresa</label>
-          {{ordemservico.funcionario}}
-      </div>
-      <div class="col">
-          <label>Data</label>
-          {{ordemservico.data | date : "longDate"}}
-      </div>
-      <div class="col">
-          <label>Detalhes</label>
-          {{ordemservico.detalhes}}
-      </div>
-    </div>
-  </div>
-  <td><a (click)="destroy(ordemservico)" class="btn btn-danger">excluir</a></td>
+<body>
+        <div class="container col-md-12">
+          <div class="col text-right d-print-none">
+            <br/>
+            <button class="btn btn-warning" onclick="history.go(-1)"> Voltar <i class="material-icons icn"> arrow_back </i></button>
+            <button class="btn btn-dark" onclick="print()"> Imprimir <i class="material-icons icn"> print </i></button>
+            <td><a (click)="destroy(ordemcompra)" class="btn btn-danger">excluir</a></td>
+          </div>
+          <br/>
+      
+          <div class="row text-center border-bottom">
+            <div class="col h3 icn text-left">
+              ORDEM DE COMPRA
+              <br/>
+            </div>
+            <div class="col h3 icn text-right">
+              Nº {{ordemservico.id}}
+              <br/>
+            </div>
+          </div>
+          <br/>
+      
+      
+          <table class="table table-bordered table-sm text-left desc">
+            <tr>
+              <th>Funcionario: </th>
+              <td>{{ordemservico.funcionario}}</td>
+            </tr>
+            <tr>
+              <th>Imóvel: </th>
+              <td>{{ordemservico.contrato.idimovel.rua}}</td>
+            </tr>
+          </table>
+      
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Quant.</th>
+                <th scope="col">Descrição</th>
+              </tr>
+            </thead>
+      
+      
+              <td></td>
+              <td>{{ordemservico.detalhes}}</td>
+      
+          </table>
+      
+            <div class="row text-justify">
+              <div class="col">
+                <div class="row text-right">
+                  <div class="col">
+                    <br/>
+                    <br/>
+      
+                    <b>{{ordemservico.contrato.idimovel.cidade}}</b>, <b>{{ordemservico.contrato.datainicial | date : "longDate"}}</b>
+                  </div>
+                </div>
+                <div class="row text-center">
+                  <div class="col">
+                  </div>
+                  <div class="col">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/> ________________________________________
+      
+                    <br/>
+                    <b>ALBA JEAN SILVA SANTOS</b>
+                    <br/>
+                    <b>CRECI 5134-F</b>
+                  </div>
+                </div>
+      
+                <br/>
+      
+              </div>
+            </div>
+            <div class="col text-right d-print-none">
+              <button class="btn btn-warning" onclick="history.go(-1)"> Voltar <i class="material-icons icn"> arrow_back </i></button>
+              <button class="btn btn-dark"> Imprimir <i class="material-icons icn"  onclick="print()"> print </i></button>
+              <br/>
+              <a style="color: #fff"> aaaaaaa </a>
+              <!--gambiarraaaaa -->
+            </div>
+        </div>
+      </body>
+    

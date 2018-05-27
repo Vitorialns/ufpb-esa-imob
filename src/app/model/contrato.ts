@@ -7,9 +7,11 @@ export class Contrato {
     datainicial: Date;
     clientelocatario: Cliente;
     clientelocador: Cliente;
+    fiador: Cliente;
     idimovel: Imovel;
     valoraluguel: Number;
     valorcondominio: Number;
     valortotal: Number;
-    datadevencimento: Date;
-}
+    diadevencimento: Number;
+    duracao: Number;
+} 

@@ -48,7 +48,7 @@ export class ContratoComponent implements OnInit {
       console.log(error);
     })
 
-    this.imovelService.getImoveis().subscribe((todosImoveis) => {
+    this.imovelService.getImoveis().subscribe((todosImoveis) => { 
       this.todosImoveis=todosImoveis;
     },(error) => {
       console.log(error);
@@ -60,20 +60,22 @@ export class ContratoComponent implements OnInit {
     this.contrato.clientelocador=imovel.clientelocador
     this.imovel.clienteLocatario=cliente
     this.imovel.unidadestatus="Ocupado"
+    this.contrato.idimovel=imovel
     this.imovelService.updateImovel(this.imovel).subscribe((imovel) => {
       console.log("Imovel Atualizado")
     })
-    this.contrato.idimovel=imovel
+    
+  }
+  escolhaClienteFiador(fiador) {
+      this.contrato.fiador=fiador;
   }
   onSubmit(f: any) {      
-      this.contrato.datadevencimento=f.datadevencimento;//
+      this.contrato.diadevencimento=f.datadevencimento;//
       this.contrato.datafinal=f.datafinal;//
       this.contrato.datainicial=f.datainicial;//
       this.contrato.valoraluguel=f.valoraluguel;//
       this.contrato.valorcondominio=f.valorcondominio;//
       this.contrato.valortotal=f.valoraluguel+f.valorcondominio;//
-
-      
 
       this.contratoService.createContrato(this.contrato).subscribe((contrato) => {
         console.log(contrato);

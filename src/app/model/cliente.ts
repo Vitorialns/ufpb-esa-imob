@@ -1,13 +1,21 @@
+import { Endereco } from "./endereco";
+import { EnderecoService } from "../servico/enderecoservice";
+
+
+
 export class Cliente {
+
   id:Number;
-  bairro:string;//
-  cep: string;//
-  cidade: string;//
+  
+  rua: string;
+  numero: string;
+  bairro: string;
+  cep: string;
+  cidade: string;
+  estado: string;
   cpfcnpj: string;//
   email: string;//
-  endereco: string;//
   nome: string;//
-  numero: string;//
   orgao: string;//
   profissao: string;//
   rg: string;//
@@ -16,7 +24,6 @@ export class Cliente {
   telefone3: string;//
   tipo1: string;//
   tipo2: string;//
-  ufcliente: string;//
   ufrg: string;
   datanascimento: string;//
 }

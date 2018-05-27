@@ -30,19 +30,39 @@ public class Contrato {
 	private Cliente clientelocador;
 	
 	@OneToOne
+	@JoinColumn(name = "fiador")
+	private Cliente fiador;
+	
+	@OneToOne
 	@JoinColumn(name = "idImovel")
 	private Imovel idimovel;
+	
 	private Float valoraluguel;
 	private Float valorcondominio;
 	private Float valortotal;
-	private Date datadevencimento;
+	private Float diadevencimento;
+	private Float duracao;
 	
 	
-	public Date getDatadevencimento() {
-		return datadevencimento;
+	
+	
+	public Cliente getFiador() {
+		return fiador;
 	}
-	public void setDatadevencimento(Date datadevencimento) {
-		this.datadevencimento = datadevencimento;
+	public void setFiador(Cliente fiador) {
+		this.fiador = fiador;
+	}
+	public Float getDiadevencimento() {
+		return diadevencimento;
+	}
+	public void setDiadevencimento(Float diadevencimento) {
+		this.diadevencimento = diadevencimento;
+	}
+	public Float getDuracao() {
+		return duracao;
+	}
+	public void setDuracao(Float duracao) {
+		this.duracao = duracao;
 	}
 	public Long getId() {
 		return id;

@@ -1,8 +1,9 @@
 import { Imovel } from "./imovel";
+import { Contrato } from "./contrato";
 
 export class OrdemServico {
     id: Number;
-    idimovel: Imovel;
+    contrato: Contrato;
     funcionario: string;
     data: Date;
     detalhes: string; 

@@ -42,13 +42,14 @@ export class ShowContratoComponent implements OnInit {
 
   }
   destroy(contrato, imovel) {
-    this.imovel.clienteLocatario=null;
+    this.imovel = contrato.idimovel;
     this.imovel.unidadestatus="Disponível";
     this.imovelService.updateImovel(this.imovel).subscribe((imovel) => {
       console.log("Imovel Atualizado")
     })
     this.contratoService.deleteContrato(contrato.id).subscribe((data) => {
     this.todosContrato.splice(this.todosContrato.indexOf(contrato),1)
+    window.location.reload()
     this.router.navigate(['/contratos']);
     }, (error) => {
       console.log(error);

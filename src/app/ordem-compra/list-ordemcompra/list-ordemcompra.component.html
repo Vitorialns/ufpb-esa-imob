@@ -27,7 +27,7 @@
     <tbody>
       <tr (click)="show(ordem)" *ngFor="let ordem of todasOrdens| filterdata: searchText : 'nome' ; let i = index">
         <td>{{ordem.id}}</td>
-        <td>{{ordem.idimovel.clientelocador.nome}}</td>
+        <td>{{ordem.contrato.idimovel.clientelocador.nome}}</td>
         <td>{{ordem.data | date : "longDate"}}</td>
         <td><mat-icon>keyboard_arrow_right</mat-icon></td>
       </tr>
