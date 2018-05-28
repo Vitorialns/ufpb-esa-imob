@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -36,6 +37,10 @@ public class Contrato {
 	@OneToOne
 	@JoinColumn(name = "idImovel")
 	private Imovel idimovel;
+	
+	@ManyToOne
+	@JoinColumn(name = "parcelas")
+	private Parcela parcelas;
 	
 	private Float valoraluguel;
 	private Float valorcondominio;

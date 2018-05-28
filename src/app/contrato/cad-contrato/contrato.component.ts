@@ -72,10 +72,15 @@ export class ContratoComponent implements OnInit {
   onSubmit(f: any) {      
       this.contrato.diadevencimento=f.datadevencimento;//
       this.contrato.datafinal=f.datafinal;//
+      var datafinal = new Date(f.datafinal);
       this.contrato.datainicial=f.datainicial;//
+      var datainicial = new Date(f.datainicial);
+      var inicio = datainicial.getMonth() + 1
+      var fim = datafinal.getMonth() + 1
       this.contrato.valoraluguel=f.valoraluguel;//
       this.contrato.valorcondominio=f.valorcondominio;//
       this.contrato.valortotal=f.valoraluguel+f.valorcondominio;//
+      this.contrato.duracao = inicio - fim ;
 
       this.contratoService.createContrato(this.contrato).subscribe((contrato) => {
         console.log(contrato);

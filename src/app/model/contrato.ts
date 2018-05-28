@@ -1,5 +1,6 @@
 import { Cliente } from "./cliente";
 import { Imovel } from "./imovel";
+import { Parcela } from "./parcela";
 
 export class Contrato {
     id: Number;
@@ -14,4 +15,5 @@ export class Contrato {
     valortotal: Number;
     diadevencimento: Number;
     duracao: Number;
+    parcelas: Parcela;
 } 
