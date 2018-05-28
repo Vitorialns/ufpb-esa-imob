@@ -1,0 +1,446 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>OrdemCompra</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <style>
+      .btn-table {
+        padding:5px;
+        font-size: 8px;
+        margin-top: -8px;
+      vertical-align: middle;
+    }
+
+    .form-container{
+  padding:5px;
+  padding-bottom:10px;
+  margin:0 auto;
+  margin-top:10px;
+  width:40%;
+  border-radius:10px;
+  background-color: #ececec;
+}
+
+.add-one{
+  color:rgba(0,0,0,0.87);
+  text-align:center;
+  font-weigth:bolder;
+  cursor:pointer;
+  margin-top:20px;
+}
+
+.delete{
+  color:white;
+  background-color:rgb(231, 76, 60);
+  text-align:center;
+  margin-top:6px;
+  font-weight:700;
+  border-radius:5px;
+  min-width:20px;
+  cursor:pointer;
+}
+
+#singlebutton{
+  width:100%;
+  margin-top:20px;
+}
+
+.title{
+  text-align:center;
+  font-size:px;
+  margin-bottom:40px;
+}
+
+.dynamic-element{
+  margin-bottom:0px;
+}
+    </style>
+
+
+</head>
+
+<!-- Cadastro da ordem de serviço -->
+<body>
+  <center><h2>Ordem de Compra</h2></center>
+  
+<form>
+<div class="container-fluid" >
+ <div class="col-md-9 col-md-offset-2">
+  <div class="card">
+   <div class="card-body">
+
+  <h4>Nova Ordem</h4>
+<div class="row">
+    <div class="col-md-4 col-xs-4">
+    <div class="form-group">
+      <label for="nomeCliente">Propritário:</label>
+      <input type="text" class="form-control" name="nomeCliente" placeholder="Nome completo do propritário" required>
+    </div>
+  </div>
+  <div class="col-md-4 col-xs-4">
+    <div class="form-group">
+      <label for="unidadeVolume">Endereço:</label>
+      <input type="text" class="form-control" name="nomeCliente" placeholder="Endereço completo" required>
+    </div>
+  </div>
+  <div class="col-md-4 ">
+    <div class="form-group">
+      <label for="unidadeVolume">Tipo de Imóvel:</label>
+       <input type="text" class="form-control" name="cidade" placeholder=" " required>
+    </div>
+  </div>
+</div> <!-- ROW -->
+
+<div class="row">
+  <div class="col-md-4 col-xs-4">
+    <div class="form-group">
+      <label for="cidade">Empresa:</label>
+      <input type="text" class="form-control" name="cidade" placeholder=" " required>
+    </div>
+  </div>
+    
+  <div class="col-md-2 col-xs-10">
+    <div class="form-group">
+      <label for="numeroCEP">CNPJ:</label>
+      <input type="text" class="form-control" name="numeroCEP" placeholder=" " required>
+    </div>
+    </div>
+    <div class="col-md-2 col-xs-2">
+    <div class="form-group">
+      <label for="nomeOrgao">Código:</label>
+      <input type="text" class="form-control" name="nomeOrgao" placeholder= "" required>
+    </div>
+  </div>
+
+  <div class="col-md-2 col-xs-2"> </div>
+
+ 
+</div> <!-- ROW -->
+
+<div class="form-group dynamic-element" style="display:none">
+
+  <div class="row">
+  <div class="col-md-2 col-xs-2"></div>
+
+    
+  <!-- Replace these fields -->
+  <div class="col-md-3">
+     <div class="form-group">
+      <label for="nomeCliente">Quant:</label>
+      <input type="text" class="form-control" name="nomeCliente" placeholder="" required>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="nomeCliente">Produto:</label>
+      <input type="text" class="form-control" name="nomeCliente" placeholder="" required>
+    </div>
+  </div>
+    <!-- End of fields-->
+    <div class="col-md-1">
+      <p class="delete"><button class="btn btn-dark btn-table"><i class="material-icons">remove_circle_outline</i></button>  </p>
+    </div>
+  </div>
+</div>
+
+<div class="form-container">
+  <form class="form-horizontal">
+  <fieldset>
+  <!-- Form Name -->
+  <legend class="title">Lista</legend>
+
+  <div class="dynamic-stuff">
+    <!-- Dynamic element will be cloned here -->
+    <!-- You can call clone function once if you want it to show it a first element-->
+  </div>
+  
+  <!-- Button -->
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-12">
+          <p class="add-one"> <i class="material-icons">add_circle_outline</i></button></p>
+      </div>
+    <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <button id="singlebutton" name="singlebutton" class="btn btn-primary">Adicionar</button>
+      </div>
+    </div>
+  </div>
+</fieldset>
+</form>
+
+ 
+
+</div> <!-- card-body -->
+
+<div class="col-md-3 col-md-offset-9">
+  <button id="singlebutton" name="singlebutton" class="btn btn-primary">Salvar</button>
+</div> <!-- Botao Salvar -->
+
+</div> <!-- card -->
+
+
+</div> <!--col md 9  -->
+</div><!--class container -->
+</form> <!-- form ordem de compra -->
+
+<!-- table -->
+  
+
+
+
+<div class="col-md-9 col-md-offset-2">
+<center><h2>Lista de Compra</h2></center>
+<div class="row">
+
+  <div class="card">
+  <div class="card-body">
+
+  <div class="input-group h2">
+    <input name="data[search]" class="form-control" id="search" type="text" placeholder="Buscar Imóvel">
+          <span class="input-group-btn">
+           <button class="btn btn-primary" type="submit">
+             <span class="glyphicon glyphicon-search"></span>
+</div>
+</div>
+
+<div class="container-fluid" >
+<!--<div class="col-md-12 col-md-offset-0"> -->
+  <table class="table table-striped"> 
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">CÓDIGO</th>
+        <th scope="col">PROPRIETÁRIO</th>
+        <th scope="col">ENDEREÇO</th>
+        <th scope="col">IMÓVEL</th>
+        <th scope="col">EMPRESA</th>
+        <th scope="col" class="text-center">LISTA</th>
+        <th></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let parcela of parcelas | filter : searchText">
+        <th   scope="row">02001012</th>
+        <td>Adyson Lucas B. Queiroga</td>
+        <td>Ed. Brizolinhas / 10</td>
+        <td>Apartamento</td>
+        <td>Close</td>
+
+
+        
+       <!--POPUP --> 
+        <td class="text-center  ">
+          <button class="btn btn-warning btn-table " data-toggle="modal" data-target="#confirmaBaixaPopUp"><i class="material-icons" >remove_red_eye</i></button>
+
+          <div class="modal fade" id="confirmaBaixaPopUp" tabindex="10" role="dialog" aria-labelledby="confirmaBaixaPopUpTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="exampleModalLongTitle">Lista de Compras</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+               <div style="text-align: center;"> 
+
+            <div class="modal-body">
+                <form id="fabForm" method="post" class="form-horizontal bv-form" novalidate="novalidate"><button type="submit" class="bv-hidden-submit" style="display: none; width: 50px; height: 50px;"></button>
+                    <div class="form-group">
+                      
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                              
+                                <thead class="thead-dark">
+
+                                 
+                                <tr> 
+                                <th scope="col" class="text-center">PRODUTO</th>
+                                <th scope="col" class="text-center">QUANTIDADE</th>
+                                <th scope="col" </th>
+
+                              </tr>
+
+                              </div>
+
+                            </thead>
+
+                    <tbody>
+                      <tr >
+                        <td> Parafuso</td>
+                        <td> 50 </td>
+                       <td class="text-center">
+                    <button class="btn btn-dark btn-table"><i class="material-icons">border_color</i></button>
+                    <button class="btn btn-dark btn-table"><i class="material-icons">delete</i></button> 
+                  </td>
+                  </td>
+                    </tbody>
+
+                  
+                    <tbody>
+                      <tr >
+                        <td> Cimento</td>
+                        <td> 10 </td>
+                        <td class="text-center">
+                    <button class="btn btn-dark btn-table"><i class="material-icons">border_color</i></button>
+                    <button class="btn btn-dark btn-table"><i class="material-icons">delete</i></button> 
+                  </td>
+                    </tbody>
+
+                    <tbody>
+                      <tr >
+                        <td> Lampada</td>
+                        <td> 10 </td>
+                        <td class="text-center">
+                    <button class="btn btn-dark btn-table"><i class="material-icons">border_color</i></button>
+                    <button class="btn btn-dark btn-table"><i class="material-icons">delete</i></button> 
+                  </td>
+                    </tbody>                                
+                            </table>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+                 </div>
+                </div>
+               
+
+
+        </td>
+        <td class="text-center">
+         
+           <button class="btn btn-dark btn-table"><i class="material-icons">border_color</i></button>
+            <button class="btn btn-dark btn-table"><i class="material-icons">delete</i></button> 
+            <button class="btn btn-dark btn-table"><i class="material-icons">local_printshop</i></button>
+
+ 
+      </tr>
+
+      <tbody>
+      <tr *ngFor="let parcela of parcelas | filter : searchText">
+        <th   scope="row">02001013</th>
+        <td>Vitória Luize do Nascimento</td>
+        <td>Perto da HONDA / 10</td>
+        <td>Apartamento</td>
+        <td>Close</td>
+
+    
+        
+        
+        <td class="text-center  ">
+          <button class="btn btn-warning btn-table " data-toggle="modal" data-target="#confirmaBaixaPopUp"><i class="material-icons" >remove_red_eye</i></button>
+
+          <div class="modal fade" id="confirmaBaixaPopUp" tabindex="-1" role="dialog" aria-labelledby="confirmaBaixaPopUpTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Lista de Compras</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+               <div style="text-align: center;"> 
+                <p>lampada<br />
+                Chuveiro<br />
+                Cadeira (rsrs) <br /></p>
+                 </div>
+                </div>
+               
+        </td>
+        <td class="text-center">
+          <button class="btn btn-dark btn-table"><i class="material-icons">border_color</i></button>
+            <button class="btn btn-dark btn-table"><i class="material-icons">delete</i></button> 
+            <button class="btn btn-dark btn-table"><i class="material-icons">local_printshop</i></button>
+      </tr>
+
+      <tbody>
+      <tr *ngFor="let parcela of parcelas | filter : searchText">
+        <th   scope="row">02001014</th>
+        <td>Vinicius Coutinho</td>
+        <td>Antonio Rodrigues de Oliveira / 235</td>
+        <td>Casa</td>
+        <td>Close</td>
+
+    
+        
+        
+        <td class="text-center  ">
+          <button class="btn btn-warning btn-table " data-toggle="modal" data-target="#confirmaBaixaPopUp"><i class="material-icons" >remove_red_eye</i></button>
+
+          <div class="modal fade" id="confirmaBaixaPopUp" tabindex="-1" role="dialog" aria-labelledby="confirmaBaixaPopUpTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Lista de Compras</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+               <div style="text-align: center;"> <p>lampada<br />
+              lampada<br />
+              lampada <br /></p>
+                 </div>
+                </div>
+                
+
+        </td>
+        <td class="text-center">
+          <button class="btn btn-dark btn-table"><i class="material-icons">border_color</i></button>
+            <button class="btn btn-dark btn-table"><i class="material-icons">delete</i></button> 
+            <button class="btn btn-dark btn-table"><i class="material-icons">local_printshop</i></button>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+ </div>
+ </div>
+
+
+  <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+
+  <script>//Clone the hidden element and shows it
+$('.add-one').click(function(){
+  $('.dynamic-element').first().clone().appendTo('.dynamic-stuff').show();
+  attach_delete();
+});
+
+
+//Attach functionality to delete buttons
+function attach_delete(){
+  $('.delete').off();
+  $('.delete').click(function(){
+    console.log("click");
+    $(this).closest('.form-group').remove();
+  });
+}</script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+</body>
+</html>
