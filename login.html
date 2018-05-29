@@ -35,6 +35,9 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
+  #message {
+    font-size: 12px;
+  }
 </style>
 </head>
 
@@ -45,13 +48,16 @@
     </div><br/>
     <h6 class="text-white">Logue-se para acessar.</h6>
     <form class="form-group">
-      <input class="form-control" type="text" id="login" placeholder="Login" required autofocus></input>
-      <input class="form-control" type="password" id="password" placeholder="Senha" required></input>
+      <input class="form-control" type="text" id="login" placeholder="Login" value=""  required autofocus></input>
+      <input class="form-control" type="password" id="password" value="" placeholder="Senha" required></input>
       <br/>
       <button type="submit" class="btn btn-danger btn-block"> Entrar </button>
+      <a class="text-white" id="message"> * </a>
     </form>
   </div>
   <script src="src/controllers/loginController.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="text/html"></script>  
 </body>
 
 </html>

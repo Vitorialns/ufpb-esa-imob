@@ -12,8 +12,9 @@ let masterPassword = 'admin';
       protocol: 'file:',
       slashes: true
     }))
-
-    win.webContents.openDevTools()
+    win.maximize();
+    win.setResizable(false);
+    //win.webContents.openDevTools()
 
     win.on('closed', () => {
       win = null
