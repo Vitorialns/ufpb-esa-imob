@@ -1,6 +1,6 @@
 export class Endereco {
     
-    id: Number;
+    id: number;
     rua: string;
     numero: string;
     bairro: string;

@@ -5,7 +5,7 @@ import { EnderecoService } from "../servico/enderecoservice";
 
 export class Cliente {
 
-  id:Number;
+  id:number;
   
   rua: string;
   numero: string;

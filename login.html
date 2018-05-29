@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" src="src/assets/css/login.css">
+  <meta charset="UTF-8">
+  <title>IMOBILIÁRIA - Login</title>
+  <style>
+  html,body {
+    height: 100%;
+  }
+  body {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+  }
+  #login {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  #password {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+</style>
+</head>
+
+<body>
+  <div class="container card bg-dark card-body col-md-3 text-center">
+    <div class="text-center">
+      <img src="src/assets/images/logo.png">
+    </div><br/>
+    <h6 class="text-white">Logue-se para acessar.</h6>
+    <form class="form-group">
+      <input class="form-control" type="text" id="login" placeholder="Login" required autofocus></input>
+      <input class="form-control" type="password" id="password" placeholder="Senha" required></input>
+      <br/>
+      <button type="submit" class="btn btn-danger btn-block"> Entrar </button>
+    </form>
+  </div>
+  <script src="src\controllers\loginController.js"></script>
+</body>
+
+</html>

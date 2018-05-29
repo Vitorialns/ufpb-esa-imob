@@ -1,3 +1,17 @@
-<p>
-  edit-ordemcompra works!
-</p>
+<div class="container">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+      <div>
+        <label for="empresa">Empresa</label>
+        <input type="text" name="empresa" class="form-control" [(ngModel)]="ordemcompra.empresa">
+      </div>
+      <div>
+        <label for="fname">Data</label>
+        <input type="datetime" name="data" class="form-control" [(ngModel)]="ordemcompra.data">
+    </div>
+    <div>
+      <label for="empresa">Detalhes</label>
+      <input type="text" name="detalhes" class="form-control" [(ngModel)]="ordemcompra.detalhes">
+    </div>
+    <input type="submit" value="salvar" class="btn btn-success">
+    </form>
+  </div>

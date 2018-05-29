@@ -1,19 +1,18 @@
 import { Contrato } from "./contrato";
 
 export class Parcela {
-    id: Number;
+    id: number;
     contrato: Contrato;
     locatario: String;
     endereco: String;
     apto: String;
-    aluguel: Number;
-    condominio: Number;
-    vencimento: Number;
-    total: Number;
-    juros: Number;
-    multa: Number;
-    pagar: Number;
+    aluguel: number;
+    condominio: number;
+    vencimento: Date;
+    total: number;
+    juros: number;
+    multa: number;
+    pagar: number;
     datapag: Date;
-
-
+    status: string;
 }

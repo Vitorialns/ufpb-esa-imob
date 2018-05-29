@@ -2,7 +2,7 @@ import { Imovel } from "./imovel";
 import { Contrato } from "./contrato";
 
 export class OrdemServico {
-    id: Number;
+    id: number;
     contrato: Contrato;
     funcionario: string;
     data: Date;

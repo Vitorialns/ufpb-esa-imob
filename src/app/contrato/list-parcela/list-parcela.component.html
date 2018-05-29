@@ -4,8 +4,7 @@
       <input type="text" class="form-control" placeholder="Pesquisar" [(ngModel)]="searchText">
       <span class="input-group-btn">
         <button class="btn btn-secondary btn-search" type="button"><mat-icon>search</mat-icon></button>
-        <div class="text-right"><button class="btn btn-danger" [routerLink]="['/parcelas']">Parcelas</button>
-           </div>
+        
       </span>
     </div>
 
@@ -15,21 +14,22 @@
     <tr>
       <th id="idHeader">Id</th>
       <th id="nameHeader">Valor do Auguel</th>
-      <th id="phoneHeader"> Locador </th>
-      <th id="emailHeader"> Locatario </th>
+      <th id="phoneHeader"> Locatario </th>
+      <th id="emailHeader"> Situação </th>
+      
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <tr (click)="show(contrato)" *ngFor="let contrato of todosContratos| filterdata: searchText : 'nome' ; let i = index">
-      <td>{{contrato.id}}</td>
-      <td>{{contrato.valoraluguel}}</td>
-      <td>{{contrato.clientelocador.nome}}</td>
-      <td>{{contrato.clientelocatario.nome}}</td>
+    <tr (click)="show(parcelas)" *ngFor="let parcelas of todasparcelas| filterdata: searchText : 'locatario' ; let i = index">
+      <td>{{parcelas.id}}</td>
+      <td>{{parcelas.aluguel}}</td>
+      <td>{{parcelas.locatario}}</td>
+      <td>{{parcelas.status}}</td>
       <td>
       <th></th>
-      <td autor="contrato.clientelocatario.nome"></td>
+      <td><a ><mat-icon>keyboard_arrow_right</mat-icon></a></td>
     </tr>
   </tbody>
 

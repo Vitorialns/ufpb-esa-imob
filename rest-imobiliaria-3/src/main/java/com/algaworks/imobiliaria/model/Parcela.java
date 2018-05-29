@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -20,17 +21,27 @@ public class Parcela {
 	@JoinColumn(name = "contrato")
 	private Contrato contrato;
 	
+	private String status;
 	private String locatario;
 	private String endereco;
 	private String apto;
 	private Float aluguel;
 	private Float condominio;
-	private Float venciemento;
+	private Date vencimento;
 	private Float total;
 	private Float juros;
 	private Float multa;
 	private Float pagar;
 	private Date datapag;
+	
+	
+	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -73,11 +84,13 @@ public class Parcela {
 	public void setCondominio(Float condominio) {
 		this.condominio = condominio;
 	}
-	public Float getVenciemento() {
-		return venciemento;
+	
+	
+	public Date getVencimento() {
+		return vencimento;
 	}
-	public void setVenciemento(Float venciemento) {
-		this.venciemento = venciemento;
+	public void setVencimento(Date vencimento) {
+		this.vencimento = vencimento;
 	}
 	public Float getTotal() {
 		return total;

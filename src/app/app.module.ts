@@ -39,6 +39,10 @@ import { ShowOrdemservicoComponent } from './ordem-servico/show-ordemservico/sho
 import { OrdemCompraService } from './servico/ordemcompra.service';
 import { OrdemServicoService } from './servico/ordemservico.service';
 import { EnderecoService } from './servico/enderecoservice'
+import { ParcelaService } from './servico/parcela.service';
+import { ListParcelaComponent } from './contrato/list-parcela/list-parcela.component';
+import { EditParcelaComponent } from './contrato/edit-parcela/edit-parcela.component';
+import { ShowParcelaComponent } from './contrato/show-parcela/show-parcela.component'
 
 
 
@@ -67,6 +71,9 @@ import { EnderecoService } from './servico/enderecoservice'
     EditOrdemservicoComponent,
     ListOrdemservicoComponent,
     ShowOrdemservicoComponent,
+    ListParcelaComponent,
+    EditParcelaComponent,
+    ShowParcelaComponent,
 
   ],
 
@@ -85,7 +92,7 @@ import { EnderecoService } from './servico/enderecoservice'
   ],
   exports: [RouterModule],
 
-  providers: [ClienteService, EnderecoService, ImovelService, ContratoService, OrdemCompraService, OrdemServicoService],
+  providers: [ClienteService, ParcelaService, EnderecoService, ImovelService, ContratoService, OrdemCompraService, OrdemServicoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

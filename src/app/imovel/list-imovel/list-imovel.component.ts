@@ -55,16 +55,6 @@ export class ListImovelComponent implements OnInit {
   gerarContrato(imovel) {
     this.imovelService.setter(imovel);
     this.cliente=this.clienteService.getter();
-    this.imovelService.getImoveis().subscribe((todosImoveis) => {
-      this.todosImoveis=todosImoveis;
-    },(error) => {
-      console.log(error);
-    })
-    this.clienteService.getClientes().subscribe((todosClientes) => {
-      this.todosClientes=todosClientes;
-    },(error) => {
-     console.log(error); 
-    })
     this.router.navigate(['contratos/new']);
   }
 

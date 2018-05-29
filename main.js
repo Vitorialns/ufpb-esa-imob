@@ -1,20 +1,18 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path')
 const url = require('url')
 
 let win
+let masterLogin = 'admin';
+let masterPassword = 'admin';
 
 function createWindow () {
   win = new BrowserWindow({width: 800, height: 600})
-
-  // load the dist folder from Angular
-  win.loadURL("http://localhost:4200"/*({
-    pathname: path.join(__dirname, 'dist/index.html'),
-    protocol: 'file:',
-    slashes: true,
-    
-    
-  })*/)
+    win.loadURL(url.format({
+      pathname: path.join(__dirname, 'login.html'),
+      protocol: 'file:',
+      slashes: true
+    }))
 
   // Open the DevTools optionally:
   win.webContents.openDevTools()
@@ -36,5 +34,14 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   if (win === null) {
     createWindow()
+  }
+  
+})
+ipcMain.on('adm:login', (event, user, pass) => {
+  if (user == masterLogin && pass == masterPassword ){
+    win.loadURL("http://localhost:4200");
+  } else {
+    win.webContents.send('adm:loginfail');
+
   }
 })

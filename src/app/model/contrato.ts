@@ -3,17 +3,16 @@ import { Imovel } from "./imovel";
 import { Parcela } from "./parcela";
 
 export class Contrato {
-    id: Number;
+    id: number;
     datafinal: Date;
     datainicial: Date;
     clientelocatario: Cliente;
     clientelocador: Cliente;
     fiador: Cliente;
     idimovel: Imovel;
-    valoraluguel: Number;
-    valorcondominio: Number;
-    valortotal: Number;
+    valoraluguel: number;
+    valorcondominio: number;
+    valortotal: number;
     diadevencimento: Number;
-    duracao: Number;
-    parcelas: Parcela;
+    duracao: number;
 } 

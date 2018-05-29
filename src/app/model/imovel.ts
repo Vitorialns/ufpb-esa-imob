@@ -4,7 +4,7 @@ import { Endereco } from "./endereco";
 
 export class Imovel {
 
-  id: Number;
+  id: number;
   
   clienteLocatario: Cliente;
   clientelocador: Cliente;

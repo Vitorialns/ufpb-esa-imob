@@ -33,4 +33,8 @@ export class ShowOrdemcompraComponent implements OnInit {
       console.log(error);
     })
     }
+    edit(contrato) {
+      this.ordemcompraservice.setter(contrato);
+      this.router.navigate(['ordemc/:id/edit']);
+    }
 }

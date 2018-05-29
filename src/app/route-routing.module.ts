@@ -23,6 +23,8 @@ import { CadOrdemservicoComponent } from './ordem-servico/cad-ordemservico/cad-o
 import { ListOrdemservicoComponent } from './ordem-servico/list-ordemservico/list-ordemservico.component';
 import { ShowOrdemservicoComponent } from './ordem-servico/show-ordemservico/show-ordemservico.component';
 import { EditOrdemservicoComponent } from './ordem-servico/edit-ordemservico/edit-ordemservico.component';
+import { ListParcelaComponent } from './contrato/list-parcela/list-parcela.component';
+import { ShowParcelaComponent } from './contrato/show-parcela/show-parcela.component';
 
 
 export const routes: Routes = [
@@ -41,8 +43,8 @@ export const routes: Routes = [
   { path: 'contratos/:id', component: ShowContratoComponent },
   { path: 'contratos/:id/edit', component: EditContratoComponent },
 
-  //{path: 'parcelas', component: CadParcelaComponent},
-  //{path: 'parcelas/:id', component: ShowParcelaComponent},
+  {path: 'parcelas', component: ListParcelaComponent},
+  {path: 'parcelas/:id', component: ShowParcelaComponent},
 
   { path: 'ordensc', component: ListOrdemcompraComponent },
   { path: 'ordemc/new', component: CadOrdemcompraComponent },

@@ -10,7 +10,8 @@ import { FilterdataPipe } from '../../filterdata.pipe';
   styleUrls: ['./list-contrato.component.css']
 })
 export class ListContratoComponent implements OnInit {
-  private todosContratos: Contrato[]; 
+  private todosContratos: Contrato[];
+  autor: string;
   //private contrato: Contrato;
   
   constructor(
@@ -35,6 +36,10 @@ export class ListContratoComponent implements OnInit {
     this.router.navigate(['/contratos/', cliente.id,'/',imovel.id]); */
     
     
+  }
+  parcelas(contrato) {
+    this.contratoService.setter(contrato);
+    this.router.navigate(['/parcelas/'])
   }
   
   /*

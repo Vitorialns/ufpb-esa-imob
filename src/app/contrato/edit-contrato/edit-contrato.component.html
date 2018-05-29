@@ -2,7 +2,7 @@
     <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
         <div>
           <label for="datafinal">Data de vencimento</label>
-          <input type="datetime" name="datafinal" class="form-control" [(ngModel)]="contrato.datafinal">
+          <input type="text" name="datafinal" class="form-control" [(ngModel)]="contrato.diadevencimento">
         </div>
         <div>
           <label for="fname">Data inicial</label>
@@ -10,7 +10,7 @@
         </div>
         <div>
             <label for="fname">Data final</label>
-            <input type="datetime" name="datainicial" class="form-control" [(ngModel)]="contrato.datainicial">
+            <input type="datetime" name="datafinal" class="form-control" [(ngModel)]="contrato.datafinal">
         </div>
         <div>
             <label for="fname">Valor do aluguel</label>
