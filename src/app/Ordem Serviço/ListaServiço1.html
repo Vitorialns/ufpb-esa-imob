@@ -1,0 +1,213 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ListaServico</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <style>
+    .add-one {
+      color: rgba(0, 0, 0, 0.87);
+      text-align: center;
+      font-weigth: bolder;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .input-lista {
+      margin-bottom: -25px;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="container bg-light col-md-8 col-md-offset-4">
+
+
+    <center><h2>Lista de Serviços</h2></center>
+
+
+  
+  <div class="card card-body">
+
+   <div class="input-group">
+        <input name="data[search]" class="form-control" id="search" type="text" placeholder="Buscar">
+        <button class="btn btn-primary" type="submit">
+             <i class="material-icons">search</i>
+           </button>
+      </div>
+</div>
+
+<div class="container-fluid" >
+<!--<div class="col-md-12 col-md-offset-0"> -->
+  <table class="table table-striped"> 
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">CÓDIGO</th>
+        <th scope="col">PROPRIETÁRIO</th>
+        <th scope="col">ENDEREÇO</th>
+        <th scope="col">IMÓVEL</th>
+        <th scope="col">FUNCIÓNARIO</th>
+        <th scope="col" class="text-center">SERVIÇOS</th>
+        <th></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let parcela of parcelas | filter : searchText">
+        <th   scope="row">02001012</th>
+        <td>Adyson Lucas B. Queiroga</td>
+        <td>Ed. Brizolinhas / 10</td>
+        <td>Apartamento</td>
+        <td>Lucas</td>
+
+
+        
+       <!--POPUP --> 
+        <td class="text-center  ">
+          <button class="btn btn-warning btn-table " data-toggle="modal" data-target="#confirmaBaixaPopUp"><i class="material-icons" >remove_red_eye</i></button>
+
+          <div class="modal fade" id="confirmaBaixaPopUp" tabindex="10" role="dialog" aria-labelledby="confirmaBaixaPopUpTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="exampleModalLongTitle">Lista de Serviços</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+               <div style="text-align: center;"> 
+
+            <div class="modal-body">
+                <div class="col-md-12 text">
+                          <div class="form-group">
+                        <label for="Serviços"></label>
+                           <div class="form-group">
+                            <textarea class="form-control" rows="6" name="Serviços" placeholder="Lista de Serviços"></textarea>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+                 </div>
+                </div>
+               
+
+
+        </td>
+        <td class="text-center">
+         
+           <button class="btn btn-dark btn-table"><i class="material-icons">border_color</i></button>
+            <button class="btn btn-dark btn-table"><i class="material-icons">delete</i></button> 
+            <button class="btn btn-dark btn-table"><i class="material-icons">local_printshop</i></button>
+
+ 
+      </tr>
+
+      <tbody>
+      <tr *ngFor="let parcela of parcelas | filter : searchText">
+        <th   scope="row">02001013</th>
+        <td>Vitória Luize do Nascimento</td>
+        <td>Perto da HONDA / 10</td>
+        <td>Apartamento</td>
+        <td>Maria</td>
+
+    
+        
+        
+        <td class="text-center  ">
+          <button class="btn btn-warning btn-table " data-toggle="modal" data-target="#confirmaBaixaPopUp"><i class="material-icons" >remove_red_eye</i></button>
+
+          <div class="modal fade" id="confirmaBaixaPopUp" tabindex="-1" role="dialog" aria-labelledby="confirmaBaixaPopUpTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Lista de Serviços</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+               <div style="text-align: center;"> 
+                <p>lampada<br />
+                Chuveiro<br />
+                Cadeira (rsrs) <br /></p>
+                 </div>
+                </div>
+               
+        </td>
+        <td class="text-center">
+          <button class="btn btn-dark btn-table"><i class="material-icons">border_color</i></button>
+            <button class="btn btn-dark btn-table"><i class="material-icons">delete</i></button> 
+            <button class="btn btn-dark btn-table"><i class="material-icons">local_printshop</i></button>
+      </tr>
+
+      <tbody>
+      <tr *ngFor="let parcela of parcelas | filter : searchText">
+        <th   scope="row">02001014</th>
+        <td>Vinicius Coutinho</td>
+        <td>Antonio Rodrigues de Oliveira / 235</td>
+        <td>Casa</td>
+        <td>Pedro</td>
+
+    
+        
+        
+        <td class="text-center  ">
+          <button class="btn btn-warning btn-table " data-toggle="modal" data-target="#confirmaBaixaPopUp"><i class="material-icons" >remove_red_eye</i></button>
+
+          <div class="modal fade" id="confirmaBaixaPopUp" tabindex="-1" role="dialog" aria-labelledby="confirmaBaixaPopUpTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Lista de Serviços</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+               <div style="text-align: center;"> <p>lampada<br />
+              lampada<br />
+              lampada <br /></p>
+                 </div>
+                </div>
+                
+
+        </td>
+        <td class="text-center">
+          <button class="btn btn-dark btn-table"><i class="material-icons">border_color</i></button>
+            <button class="btn btn-dark btn-table"><i class="material-icons">delete</i></button> 
+            <button class="btn btn-dark btn-table"><i class="material-icons">local_printshop</i></button>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+ </div>
+ </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

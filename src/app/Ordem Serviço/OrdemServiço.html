@@ -1,0 +1,114 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>OrdemServiço</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <style>
+    .add-one {
+      color: rgba(0, 0, 0, 0.87);
+      text-align: center;
+      font-weigth: bolder;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .input-lista {
+      margin-bottom: -25px;
+    }
+  </style>
+
+
+</head>
+
+<!-- Cadastro da ordem de serviço -->
+
+<body>
+
+  <div class="container bg-light col-md-9 col-md-offset-2">
+    <h2>Ordem de Serviço</h2>
+
+    <div class="card card-body">
+      <form>
+        <div class="row">
+          <div class="form-group col-md-6 col-xs-4">
+            <label ng-model="ordemcompra.imovel">Imóvel</label>
+            <select class="form-control" data-size="5" data-live-search="true" data-width="100%" ng-model="ordemcompra.imovel" required>
+                <option selected disabled>Escolha um locatário</option>
+                <option>Maria Fernanda</option>
+                <option>Maria Gabriela</option>
+                <option>Maria Heloísa</option>
+                <option>Maria Iris</option>
+                <option>Maria Julia</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6 col-xs-4">
+            <label for="unidadeVolume">Funcionário</label>
+              <select class="form-control" data-size="5" data-live-search="true" data-width="100%" ng-model="ordemcompra.imovel" required>
+                <option selected disabled>Escolha um funcionário</option>
+                <option>Maria Fernanda</option>
+                <option>Maria Gabriela</option>
+                <option>Maria Heloísa</option>
+                <option>Maria Iris</option>
+                <option>Maria Julia</option>
+            </select>
+           
+          </div>
+        </div>
+        <!-- ROW -->
+
+
+        <div class="form-group dynamic-element" style="display:none">
+          <div class="row input-lista">
+            <div class="col-md-1 form-group">
+              <input type="number" class="form-control form-control-sm" name="nomeCliente" placeholder="" required>
+            </div>
+            <div class="col-md-10 form-group">
+              <input type="text" class="form-control form-control-sm" name="nomeCliente" placeholder="" required>
+            </div>
+
+            <div class="col-md-1">
+              <p class="btn btn-danger delete btn-sm"><i class="material-icons">remove_circle_outline</i></p>
+            </div>
+          </div>
+        </div>
+        
+        Serviços
+
+        <div class="col-md-12 text">
+             <div class="form-group">
+                <label for="serviços"></label>
+                <div class="form-group">
+                <textarea class="form-control" rows="6" name="observacoes" placeholder="Ordens de serviços"></textarea>
+                </div>
+                </div>
+
+              <!-- Button -->
+              </div><br/>
+        <div class="col-md-12 text-right">
+          <button type="submit" class="btn btn-dark">Salvar</button>
+        </div>
+        </form>
+      </form>
+    </div>
+            </fieldset>
+
+
+
+
+  
+
+    
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
